@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+img {
+  display: block !important;
+}
+
+.container {
+  width: 100% !important;
+}

@@ -1,0 +1,405 @@
+.banner-berryfields-container {
+  width: 100%;
+  height: auto;
+  background-color: #f2ded1;
+}
+
+.banner-berryfields-container .background-overlay {
+  width: 100%;
+  height: auto;
+  background: url("../../../assets/images/branding/fondo-berry-banner.png");
+}
+
+.banner-berryfields-container .background-overlay .container {
+  width: 85% !important;
+  margin: auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-berryfields-container .background-overlay .container .text-container {
+  width: 65%;
+  height: auto;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  h1 {
+  font-family: "Lexend Deca", sans-serif;
+  line-height: 60px;
+  font-weight: bolder;
+  font-size: 48px;
+  color: #3a2618;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  h1
+  img {
+  display: inline !important;
+  max-width: auto;
+  height: 60px;
+  position: absolute;
+  margin-left: 15px;
+}
+
+.banner-berryfields-container .background-overlay .container .image-container {
+  width: 35%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .image-container
+  img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span {
+  width: max-content;
+  display: flex;
+  margin-top: 25px;
+  padding: 20px 0px;
+  border-top: 4px solid #3a2618;
+  border-bottom: 1px solid #3a2618;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .col-span {
+  display: flex;
+  align-items: center;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .col-span
+  .icon {
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  color: #7b6658;
+  text-align: center;
+  line-height: 60px;
+  margin: 0px 15px 0px 0px;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .divider {
+  display: block;
+  width: 2px;
+  height: auto;
+  background-color: #3a2618;
+  margin: 0px 45px;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .col-span
+  .text {
+  width: auto;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .col-span
+  .text
+  span {
+  display: block;
+  text-transform: uppercase;
+  font-family: "Lexend Deca", sans-serif;
+  color: #3a2618;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .col-span
+  .text
+  .text-lighter {
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .row-span
+  .col-span
+  .text
+  .text-bolder {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .data-contact {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .data-contact
+  ul {
+  display: flex;
+  
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .data-contact
+  ul
+  li {
+  list-style: none;
+  margin: 0px 45px 0px 0px;
+  font-weight: 600;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 14px;
+  color: #3a2618;
+}
+
+.banner-berryfields-container
+  .background-overlay
+  .container
+  .text-container
+  .data-contact
+  ul
+  li
+  i {
+  margin: 0px 5px 0px 0px;
+  color: #3a2618;
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-berryfields-container .background-overlay .container {
+    width: 90% !important;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 15px 0px;
+  }
+
+  .banner-berryfields-container .background-overlay .container .text-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    h1
+    img {
+    display: inline !important;
+    max-width: auto;
+    height: 40px;
+    position: absolute;
+    margin-left: 10px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .row-span {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 20px 0px;
+    border-top: 4px solid #3a2618;
+    border-bottom: 1px solid #3a2618;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .row-span
+    .col-span {
+    display: flex;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .row-span
+    .divider {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #3a2618;
+    margin: 30px 0px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .data-contact
+    ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .data-contact
+    ul
+    li {
+    margin: 0px 0px 15px 0px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .image-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .banner-berryfields-container .background-overlay .container {
+    width: 90% !important;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 0px 0px;
+  }
+
+  .banner-berryfields-container .background-overlay .container .text-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    h1 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    h1
+    img {
+    display: inline !important;
+    max-width: auto;
+    height: 60px;
+    position: absolute;
+    margin-left: 10px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .row-span {
+    width: 100%;
+    display: flex;
+    margin-top: 25px;
+    padding: 20px 0px;
+    border-top: 4px solid #3a2618;
+    border-bottom: 1px solid #3a2618;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .row-span
+    .col-span {
+    display: flex;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .data-contact
+    ul {
+    display: flex;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .text-container
+    .data-contact
+    ul
+    li {
+    margin: 0px 45px 0px 0px;
+  }
+
+  .banner-berryfields-container
+    .background-overlay
+    .container
+    .image-container {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,389 @@
+.promotion-section {
+  margin: 50px 0px;
+  width: 100%;
+}
+
+.promotion-header {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.promotion-title {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #3a2618;
+}
+
+.promotion-more {
+  width: auto;
+  height: 100%;
+}
+
+.promotion-more .promotion-button-more {
+  padding: 5px 45px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff962e;
+  border: 2px solid #ff962e;
+  font-family: "Poppins", sans-serif;
+  display: none;
+}
+
+.promotion-more .promotion-button-more:hover {
+  background-color: #ff962e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.promotion-content {
+  width: 100%;
+  position: relative;
+}
+
+.promotion-content .promotion-cards {
+  width: 80%;
+  margin: 0 0 0 10%;
+  display: flex;
+}
+
+.col-promotion-card {
+  padding: 0 10px;
+}
+
+.promotion-card {
+  height: auto;
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.promotion-card .promotion-card-top {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.promotion-card .promotion-card-top .product-image {
+  width: 100%;
+  height: inherit;
+}
+
+.promotion-card .promotion-card-top .product-image img {
+  max-width: 100%;
+  height: auto;
+  padding: 40px;
+}
+
+.promotion-card .promotion-card-top .promotion-label {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.promotion-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  background-color: #ffcd9b;
+  color: #3a2618;
+  border: none;
+  display: block;
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+  outline: none;
+}
+
+.promotion-button:hover {
+  background-color: #ffb267;
+}
+
+.prev-btn {
+  left: 75px;
+}
+
+.next-btn {
+  right: 75px;
+}
+
+.promotion-card .promotion-card-bottom {
+  width: 100%;
+  height: 215px;
+  background-color: #fff7ec;
+  padding: 15px;
+  border-top: 1px solid #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.promotion-card .promotion-card-bottom .category {
+  font-size: 14px;
+  color: #fe7e00;
+  font-weight: 300;
+  text-align: left;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.promotion-card .promotion-card-bottom .title {
+  font-size: 16px;
+  color: #3a2618;
+  font-weight: bolder;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  margin: 2px 0px;
+}
+
+.promotion-card .promotion-card-bottom .weight {
+  font-size: 14px;
+  color: #c5c5c5;
+  font-weight: 300;
+  text-align: left;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.promotion-card .promotion-card-bottom .price {
+  font-size: 20px;
+  color: #fe7e00;
+  font-weight: 600;
+  text-align: left;
+  margin: 8px 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+.promotion-card .promotion-card-bottom .card-product-cart {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content {
+  width: 50%;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  input {
+  width: 45px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  display: center;
+  align-items: center;
+  align-content: center;
+  border: 2px solid #d9d9d9;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0px 4px;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  input:hover,
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  input:focus {
+  border: 2px solid #ff962e;
+  background-color: #f4f4f4;
+  outline: none;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  .product-decrease,
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  .product-increase {
+  width: 23px;
+  height: 23px;
+  background-color: #ffcd9b;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  .product-decrease:hover,
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  .product-increase:hover {
+  background-color: #ffb267;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  input[type="number"]::-webkit-outer-spin-button,
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-quantity-content
+  input[type="number"]::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-buy-button {
+  width: calc(100% - 30px);
+  position: absolute;
+  bottom: 0;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-buy-button
+  .product-add {
+  background-color: #ff9f40;
+  padding: 10px 15px;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-buy-button
+  .product-add:hover {
+    background-color: #ffb267;
+  }
+
+.promotion-card
+  .promotion-card-bottom
+  .card-product-cart
+  .card-product-buy-button
+  .product-add
+  span {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .promotion-header {
+    width: 90%;
+    padding: 0px !important;
+  }
+
+  .promotion-content {
+    width: 100%;
+    margin: auto;
+    padding: 0px 5px !important;
+  }
+
+  .col-promotion-card {
+    padding: 0 10px;
+  }
+
+  .promotion-content .promotion-button {
+    top: calc(50% - 10px);
+    display: none;
+  }
+
+  .promotion-content .promotion-cards {
+    width: 100%;
+    margin: 0 0 0 5%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .promotion-card {
+    width: 100% !important;
+    height: auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .prev-btn {
+    left: 15px !important;
+  }
+
+  .next-btn {
+    right: 15px !important;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px)  {
+  .promotion-header {
+    width: 90% !important;
+    padding: 0px !important;
+  }
+
+  .promotion-content {
+    width: 100%;
+    padding: 0px 15px !important;
+  }
+
+  .col-promotion-card {
+    padding: 0 10px;
+  }
+
+  .promotion-content .promotion-button {
+    top: calc(50% - 25px);
+  }
+
+  .promotion-content .promotion-cards {
+    width: 100%;
+    margin: 0 0 0 5%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .promotion-card {
+    width: 100% !important;
+    height: auto;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .prev-btn {
+    left: 10px !important;
+  }
+
+  .next-btn {
+    right: 10px !important;
+  }
+}

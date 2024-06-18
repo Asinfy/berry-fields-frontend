@@ -1,0 +1,631 @@
+header {
+  width: 100%;
+  height: auto;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 20;
+  background-color: #fffbf5;
+  box-shadow: 0px 2px 10px #888888;
+}
+
+.navbar .navbar-main {
+  width: 80%;
+  height: 100px;
+  margin: auto;
+  background-color: #fffbf5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.navbar .navbar-main .logo-header {
+  width: 20%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-main .logo-header img {
+  width: 100px;
+  height: auto;
+  display: block;
+  z-index: 20;
+}
+
+.navbar .navbar-main .navbar-items {
+  width: 80%;
+  height: 100px;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item {
+  width: 100%;
+  height: inherit;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .search-box {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  text-align: center;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .search-box .search-input {
+  width: 90%;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #f4f4f4;
+  display: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px 30px;
+  border: 2px solid #e9e9e9;
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #616161;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .search-box .search-input:hover,
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .search-box
+  .search-input:focus {
+  background-color: #e9e9e9;
+  outline: none;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .search-box .search-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #ff962e;
+  border: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .search-box
+  .search-button:hover {
+  background-color: #ffb267;
+  cursor: pointer;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .cart-info {
+  width: 35%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .cart-info .cart-input {
+  width: auto;
+  height: auto;
+}
+
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .cart-info
+  .cart-input
+  .cart-button {
+  border-radius: 50px;
+  background-color: #ff962e;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #ff962e;
+  border: none;
+  font-size: 20px;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  position: relative;
+}
+
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .cart-info
+  .cart-input
+  .cart-button
+  .count-cart {
+  position: absolute;
+  font-size: 11px;
+  color: #ffffff;
+  top: -14px;
+  right: -6px;
+  background-color: #111111;
+  line-height: 28px;
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  font-weight: bolder;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .cart-info
+  .cart-input
+  .cart-button:hover {
+  background-color: #ffb267;
+  cursor: pointer;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .cart-info .cart-text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .cart-info
+  .cart-text
+  .cart-title {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #616161;
+}
+
+.navbar
+  .navbar-main
+  .navbar-items
+  .navbar-item
+  .cart-info
+  .cart-text
+  .cart-price {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .navbar-title {
+  width: 75%;
+  text-align: center;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .navbar-logo {
+  width: 25%;
+  height: inherit;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item .navbar-logo img {
+  display: block;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item p {
+  color: #616161;
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 24px;
+}
+
+.navbar .navbar-main .navbar-items .navbar-item p span {
+  color: #fe7e00;
+}
+
+.header-mb {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar .navbar-main {
+    width: 90%;
+    height: 100px;
+    position: relative;
+    padding: 0;
+  }
+
+  .navbar .logo-header {
+    width: 25%;
+    height: 80px;
+    z-index: 20;
+  }
+
+  .navbar .navbar-items {
+    width: 75%;
+  }
+
+  .navbar .navbar-items .navbar-item .search-box,
+  .navbar .navbar-items .navbar-item .navbar-title {
+    display: none !important;
+  }
+
+  .navbar .navbar-items .navbar-item {
+    width: 100%;
+    height: 100px;
+    flex-direction: column-reverse;
+    align-items: center !important;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+  }
+
+  .navbar .navbar-items .navbar-item .cart-info {
+    width: 100% !important;
+    position: absolute;
+    top: 0px !important;
+  }
+
+  .navbar .navbar-items .navbar-item .search-box {
+    position: static;
+    top: 0;
+    width: 100% !important;
+    height: 10%;
+    top: 0px;
+    background-color: rebeccapurple;
+  }
+
+  .navbar .navbar-items .navbar-item .navbar-title {
+    position: absolute;
+    width: 100% !important;
+    top: 140px;
+  }
+
+  .navbar .navbar-items .navbar-item .navbar-title p {
+    font-size: 18px;
+  }
+
+  .navbar .navbar-items .navbar-item .navbar-logo {
+    width: 100% !important;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .navbar-logo img {
+    width: 130px;
+  }
+
+  .header-mb {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 175px;
+  }
+
+  .header-mb .navbar-item {
+    width: 90%;
+    height: auto;
+    margin: auto;
+  }
+
+  .header-mb .navbar-item .search-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+  }
+
+  .header-mb .navbar-item .search-box .search-input {
+    width: 80%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #f4f4f4;
+    display: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px 30px;
+    border: 2px solid #e9e9e9;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #616161;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .header-mb .navbar-item .search-box .search-input:hover,
+  .header-mb .navbar-item .search-box .search-input:focus {
+    background-color: #e9e9e9;
+    outline: none;
+  }
+
+  .header-mb .navbar-item .search-box .search-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #ff962e;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  .header-mb .navbar-item .search-box .search-button:hover {
+    background-color: #ffb267;
+    cursor: pointer;
+  }
+
+  .header-mb .navbar-item .navbar-title {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-mb .navbar-item .navbar-title p {
+    color: #616161;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 17.3px;
+  }
+
+  .header-mb .navbar-item .navbar-title p span {
+    color: #fe7e00;
+  }
+  .navbar .navbar-main .navbar-items .navbar-item .navbar-logo img {
+    width: 130px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  header {
+    width: 100%;
+    height: auto;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+    background-color: #fffbf5;
+    box-shadow: 0px 2px 10px #888888;
+  }
+
+  .navbar .navbar-main {
+    width: 90%;
+    height: 100px;
+    margin: auto;
+    background-color: #fffbf5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  .navbar .navbar-main .logo-header {
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .navbar-main .logo-header img {
+    width: 100px;
+    height: auto;
+    display: block;
+  }
+
+  .navbar .navbar-main .navbar-items {
+    width: 80%;
+    height: 100px;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item {
+    width: 100%;
+    height: inherit;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .search-box {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    text-align: center;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .search-box .search-input {
+    width: 75%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #f4f4f4;
+    display: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px 30px;
+    border: 2px solid #e9e9e9;
+    margin-right: 5px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #616161;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .search-box
+    .search-input:hover,
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .search-box
+    .search-input:focus {
+    background-color: #e9e9e9;
+    outline: none;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .search-box .search-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #ff962e;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .search-box
+    .search-button:hover {
+    background-color: #ffb267;
+    cursor: pointer;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .cart-info {
+    width: 40%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .cart-info .cart-input {
+    width: auto;
+    height: auto;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .cart-info
+    .cart-input
+    .cart-button {
+    border-radius: 50px;
+    background-color: #ff962e;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #ff962e;
+    border: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .cart-info
+    .cart-input
+    .cart-button
+    .count-cart {
+    position: absolute;
+    font-size: 11px;
+    color: #ffffff;
+    top: -12px;
+    right: -3px;
+    background-color: #111111;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    font-weight: bolder;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .cart-info
+    .cart-input
+    .cart-button:hover {
+    background-color: #ffb267;
+    cursor: pointer;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .cart-info .cart-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .cart-info
+    .cart-text
+    .cart-title {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #616161;
+  }
+
+  .navbar
+    .navbar-main
+    .navbar-items
+    .navbar-item
+    .cart-info
+    .cart-text
+    .cart-price {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .navbar-title {
+    width: 70%;
+    text-align: center;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .navbar-logo {
+    width: 30%;
+    height: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item .navbar-logo img {
+    width: 130px;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item p {
+    color: #616161;
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 18px;
+  }
+
+  .navbar .navbar-main .navbar-items .navbar-item p span {
+    color: #fe7e00;
+  }
+
+  .header-mb {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+.scrolling-text {
+display: flex;
+justify-content: flex-start;
+background-color: #ffb267;
+overflow: hidden;
+padding: 10px 0px;
+}
+
+.scrolling-text span {
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bolder;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  animation: scroll 30000ms linear infinite;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

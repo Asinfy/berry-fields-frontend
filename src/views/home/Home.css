@@ -1,0 +1,26 @@
+/* Home.css */
+.loading-enter,
+.error-enter,
+.products-enter {
+    opacity: 0;
+}
+
+.loading-enter-active,
+.error-enter-active,
+.products-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+.loading-exit,
+.error-exit,
+.products-exit {
+    opacity: 1;
+}
+
+.loading-exit-active,
+.error-exit-active,
+.products-exit-active {
+    opacity: 0;
+    transition: opacity 0.5s;
+}

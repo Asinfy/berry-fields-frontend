@@ -1,0 +1,37 @@
+.data-user-container {
+  width: 70%;
+  margin: 0px auto 50px;
+  padding: 0px 10px;
+}
+
+.data-user-container h1 {
+  text-align: center;
+  margin: 0px auto 25px;
+  font-family: "Lexend Deca", sans-serif;
+  color: #3A2618;
+}
+
+.data-user-container .data-user-content {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .data-user-container {
+    width: 90%;
+    padding: 0 !important;
+  }
+  .data-user-container .data-user-content {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .data-user-container {
+    width: 90%;
+    padding: 0 !important;
+  }
+  .data-user-container .data-user-content {
+    flex-direction: column;
+  }
+}

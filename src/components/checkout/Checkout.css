@@ -1,0 +1,140 @@
+.berry-checkout-timeLine {
+  width: 66.6%;
+  margin: 200px auto 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 64px;
+}
+
+.berry-checkout-timeLine .berry-checkout-timeLineItem,
+.berry-checkout-timeLine .berry-checkout-timeLineDivider {
+  text-decoration: none;
+  text-align: center;
+  color: #cfcfcf;
+  width: max-content;
+}
+
+.berry-checkout-timeLine .berry-checkout-timeLineDivider {
+  width: 300px;
+  height: 3px;
+  background-color: #cccccc;
+  margin-top: -40px;
+}
+
+.berry-checkout-timeLine .berry-checkout-timeLineItem.active {
+  color: #000000;
+}
+
+.berry-checkout-timeLine .berry-checkout-timeLineDivider.active {
+  background-color: #ff9f40;
+}
+
+.berry-checkout-timeLine
+  .berry-checkout-timeLineItem
+  .berry-checkout-timeLineIcon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  color: #cfcfcf;
+  background-color: #f4f4f4;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 64px;
+  font-size: 32px;
+}
+
+.berry-checkout-timeLine
+  .berry-checkout-timeLineItem.active
+  .berry-checkout-timeLineIcon {
+  background-color: #ff9f40;
+  color: #ffffff;
+}
+
+.berry-checkout-timeLine
+  .berry-checkout-timeLineItem
+  .berry-checkout-timeLineMessage {
+  display: block;
+  font-weight: 500;
+  margin: 5px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #cfcfcf;
+  text-align: center;
+}
+
+.berry-checkout-timeLine
+  .berry-checkout-timeLineItem.active
+  .berry-checkout-timeLineMessage {
+  color: #000000;
+}
+
+@media only screen and (max-width: 600px) {
+  .berry-checkout-timeLine {
+    width: 90%;
+    column-gap: 16px;
+    margin: 50px auto;
+    padding: 0 10px;
+  }
+
+  .berry-checkout-timeLine .berry-checkout-timeLineDivider {
+    width: 75px;
+    height: 3px;
+    background-color: #cccccc;
+    margin-top: -25px;
+  }
+  .berry-checkout-timeLine
+    .berry-checkout-timeLineItem
+    .berry-checkout-timeLineIcon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+  }
+  .berry-checkout-timeLine
+  .berry-checkout-timeLineItem
+  .berry-checkout-timeLineMessage {
+  display: block;
+  font-weight: 500;
+  margin: 5px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #cfcfcf;
+}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .berry-checkout-timeLine {
+    width: 82.5%;
+    column-gap: 16px;
+    margin: 200px auto 50px;
+    padding: 0 10px;
+  }
+
+  .berry-checkout-timeLine .berry-checkout-timeLineDivider {
+    width: 170px;
+    height: 3px;
+    background-color: #cccccc;
+    margin-top: -25px;
+  }
+  .berry-checkout-timeLine
+    .berry-checkout-timeLineItem
+    .berry-checkout-timeLineIcon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+  }
+  .berry-checkout-timeLine
+  .berry-checkout-timeLineItem
+  .berry-checkout-timeLineMessage {
+  display: block;
+  font-weight: 500;
+  margin: 5px auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #cfcfcf;
+}
+}
