@@ -13,9 +13,12 @@
 }
 
 .promotion-title {
+  width: 100%;
+}
+
+.promotion-title h2 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 40px;
-  font-weight: 600;
   color: #3a2618;
 }
 
@@ -304,6 +307,10 @@
   .promotion-header {
     width: 90%;
     padding: 0px !important;
+  }
+
+  .promotion-title h2 {
+    font-size: 36px;
   }
 
   .promotion-content {

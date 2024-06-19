@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "../../../contexts/ShoppingCartContext";
 import "./Header.css";
 import LogoBerry from "../../../assets/images/branding/logo-berry.svg";
-import LogoChacam from "../../../assets/images/branding/logo-chacam-trading.png";
+import LogoAsinfy from "../../../assets/images/branding/logo-asinfy.svg";
 import LogoWompi from "../../../assets/images/branding/wompi-logo-principal.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ScrollingText } from "../scrolling-text/ScrollingText";
@@ -132,7 +132,7 @@ export const Header = () => {
                     </p>
                   </div>
                   <div className="navbar-logo">
-                    <img src={LogoChacam} alt="" />
+                    <img src={LogoAsinfy} alt="" />
                   </div>
                 </div>
               )}
