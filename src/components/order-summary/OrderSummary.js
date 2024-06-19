@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import "../order-summary/OrderSummary.css";
+import axios from "axios";
 
 export const OrderSummary = () => {
   const { total,
@@ -9,8 +10,11 @@ export const OrderSummary = () => {
     setMakePayment,
     setShipmentData,
     setDataRecord,
-    
+    /* discount,
+    setDiscount */
   } = useContext(CartContext);
+
+  /* const [inputValue, setInputValue] = useState(''); */
 
   const deactivate = () => {
     setMakePayment(null);
@@ -18,10 +22,27 @@ export const OrderSummary = () => {
     setDataRecord(null);
   }
 
-  
   const onMakePayment = (state) => {
     setMakePayment(state === 'Activate')
   }
+
+/*   const handleInputChange = (event) => {
+    const { value } = event.target;
+    setInputValue(value)
+  };
+
+  const discountValidacion = async() => {
+    console.log(inputValue)
+    try {
+      const response = await axios.get(`https://zoho.accsolutions.tech/API/v1/All_Descuentos_Berries?where=Codigo_Descuento=="${inputValue}"`);
+      
+      console.log(response.data.data)
+    } catch (error) {
+      console.error("aqui esta el error: ", error)
+    }
+
+
+  } */
   return (
     <>
 
@@ -29,8 +50,14 @@ export const OrderSummary = () => {
         {/* <div className="cart-coupon">
           <label for="cupon">Aplicar tu descuento</label>
           <div className="cart-coupon-data">
-            <input type="text" id="cupon" name="cupon" placeholder="Cupón de descuento"></input>
-            <button>Aplicar</button>
+            <input
+              type="text"
+              id="cupon"
+              name="cupon"
+              placeholder="Cupón de descuento"
+              onChange={handleInputChange}
+            />
+            <button onClick={() => discountValidacion()}>Aplicar</button>
           </div>
         </div> */}
         <div className="cart-summation">
@@ -55,7 +82,7 @@ export const OrderSummary = () => {
         </div>
         <div className="cart-options">
           {countProducts !== 0 ? (
-        <button className="button-pay" onClick={() => onMakePayment('Activate')}>Realizar Pago</button>
+            <button className="button-pay" onClick={() => onMakePayment('Activate')}>Realizar Pago</button>
           ) : null}
           <Link to="/tienda" className="button-buy" onClick={() => deactivate()}>Seguir Comprando</Link>
         </div>

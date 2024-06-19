@@ -11,6 +11,7 @@ export const ShoppingCartProvider = ({ children }) => {
     const [document, setDocument]= useState('') //para almacenar la cedula temporalmente
     const [filterProduct, setFilterProduct]= useState([]) //para almacenar los productos filtrados
     const [search, setSearch]= useState([]) //para almacenar los productos filtrados
+    const [discount, setDiscount]= useState([]) //para almacenar el descuento
     /* inicializacion del estado */
     const [allProducts, setAllProducts] = useState(() => {
         /* intenta recuperar los datos de localStorage, o retorna un array vacio si no hay datos */
@@ -61,7 +62,9 @@ export const ShoppingCartProvider = ({ children }) => {
             filterProduct,
             setFilterProduct,
             search,
-            setSearch
+            setSearch, 
+            discount,
+            setDiscount
             }}>
             {children}
         </CartContext.Provider>
