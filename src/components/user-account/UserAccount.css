@@ -42,7 +42,8 @@
   font-family: "Lexend Deca", sans-serif;
   outline: none;
   width: 100%;
-  color: #b3b3b3;
+  color: #3a2618;
+  font-weight: 400;
 }
 
 .user-account-form-container .form-row .form-column select {
@@ -54,9 +55,12 @@
   border: 1px solid #fe7e00;
 }
 
-.user-account-form-container .form-row .form-column input::placeholder,
+.user-account-form-container .form-row .form-column input::placeholder {
+  color: #3a2618;
+}
+
 .user-account-form-container .form-row .form-column select option {
-  color: #b3b3b3;
+  color: #3a2618;
 }
 
 .user-account-form-container .form-row .form-column .label {
@@ -85,7 +89,7 @@
   .form-column
   .form-column-aux
   label.radio {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 12px;
   display: inline-block;
   color: #3a2618;
