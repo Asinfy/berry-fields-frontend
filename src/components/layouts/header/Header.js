@@ -12,11 +12,12 @@ export const Header = () => {
     total,
     countProducts,
     productList,
-    setProductList,
-    filterProduct,
     setFilterProduct,
-    search,
     setSearch,
+    setDiscount,
+    setMakePayment,
+    setShipmentData,
+    setDataRecord
   } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -53,6 +54,13 @@ export const Header = () => {
 
   const location = useLocation();
 
+  const deactivate = () => {
+    setMakePayment(null);
+    setShipmentData(null);
+    setDataRecord(null);
+    setDiscount([]);
+  }
+
   return (
     <>
       <header>
@@ -60,7 +68,7 @@ export const Header = () => {
           <ScrollingText></ScrollingText>
           <div className="navbar-main">
             <div className="logo-header">
-              <Link to="/">
+              <Link to="/" onClick={() => deactivate()}>
                 <img src={LogoBerry} alt="Logo de BerryFields."></img>
               </Link>
             </div>
