@@ -25,7 +25,7 @@
 .cart-content-summary .cart-coupon .cart-coupon-data input {
   border-radius: 8px;
   border: 1px solid #CFCFCF;
-  font-size: 11px;
+  font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
   outline: none;
@@ -43,7 +43,7 @@
   color: #FFA64E;
   font-weight: 400;
   background-color: transparent;
-  font-size: 11px;
+  font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
 }
@@ -51,6 +51,36 @@
 .cart-content-summary .cart-coupon .cart-coupon-data button:hover {
   background-color: #FFA64E;
   color: #ffffff;
+}
+
+.cart-content-summary .validation-user {
+  background-color: #fffbf5;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #cfcfcf;
+  margin-bottom: 25px;
+}
+
+.cart-content-summary .validation-user label {
+  display: block;
+  font-family: "Lexend Deca", sans-serif;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.cart-content-summary .validation-user input {
+  border-radius: 8px;
+  border: 1px solid #CFCFCF;
+  font-size: 12px;
+  padding: 10px;
+  font-family: "Lexend Deca", sans-serif;
+  outline: none;
+  width: 100%;
+  margin: 0px 12.5px 0px 0px;
+}
+
+.cart-content-summary .validation-user input:focus {
+  border: 1px solid #FFA64E;
 }
 
 .cart-content-summary .cart-summation {

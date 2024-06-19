@@ -28,7 +28,7 @@
   .background-overlay
   .container
   .text-container
-  h1 {
+  h2 {
   font-family: "Lexend Deca", sans-serif;
   line-height: 60px;
   font-weight: bolder;
@@ -40,7 +40,7 @@
   .background-overlay
   .container
   .text-container
-  h1
+  h2
   img {
   display: inline !important;
   max-width: auto;

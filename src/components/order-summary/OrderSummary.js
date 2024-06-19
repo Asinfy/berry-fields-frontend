@@ -5,13 +5,15 @@ import "../order-summary/OrderSummary.css";
 import axios from "axios";
 import { useMessage } from "../../contexts/MessageContext";
 export const OrderSummary = () => {
-  const { total,
+  const {
+    total,
     countProducts,
     setMakePayment,
     setShipmentData,
     setDataRecord,
     discount,
     setDiscount
+
   } = useContext(CartContext);
 
   const { addMessage } = useMessage();
@@ -54,58 +56,82 @@ export const OrderSummary = () => {
       addMessage('error', 'Error', 'Cupon no existe')
     }
   }
+
   return (
     <>
-
       <div className="cart-content-summary">
         {countProducts !== 0 ? (
-          <div className="cart-coupon">
-            <label for="cupon">Aplicar tu descuento</label>
-            <div className="cart-coupon-data">
-              <input
-                type="text"
-                id="cupon"
-                name="cupon"
-                placeholder="Cupón de descuento"
-                onChange={handleInputChange}
-              />
-              <button onClick={() => discountValidacion()}>Aplicar</button>
+          <>
+            <div className="cart-coupon">
+              <label for="cupon">Aplicar tu descuento</label>
+              <div className="cart-coupon-data">
+                <input
+                  type="text"
+                  id="cupon"
+                  name="cupon"
+                  placeholder="Cupón de descuento"
+                  onChange={handleInputChange}
+                />
+                <button onClick={() => discountValidacion()}>Aplicar</button>
+              </div>
             </div>
-          </div>
+            <div className="validation-user">
+              <label for="documento">Número de documento</label>
+              <input
+                type="number"
+                id="documento"
+                name="documento"
+                onChange=""
+                placeholder="Ingrese su número de documento"
+              ></input>
+            </div>
+          </>
         ) : null}
         <div className="cart-summation">
           <div className="body-summation">
             <div className="row">
               <div className="mycart-item-text">Subtotal:</div>
-              <div className="mycart-item-price">${new Intl.NumberFormat('es-CL').format(total)}</div>
+              <div className="mycart-item-price">
+                ${new Intl.NumberFormat("es-CL").format(total)}
+              </div>
             </div>
             <div className="row">
               <div className="mycart-item-text">Descuento:</div>
               <div className="mycart-item-price">{discount.length > 0 ? `- $${new Intl.NumberFormat('es-CL').format((discount[0].Porcentaje / 100) * total)}` : "0"}   </div>
-            </div>
+            </div >
             <div className="row">
               <div className="mycart-item-text">Costo de Envío:</div>
               <div className="mycart-item-price">GRATIS</div>
             </div>
-          </div>
+          </div >
           <div className="footer-summation">
             <div className="grand-total">Total:</div>
             <div className="total-mycart">
-              {discount.length > 0 ?
-                `$${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` : `${new Intl.NumberFormat('es-CL').format(total)}`
+              {
+                discount.length > 0 ?
+                  `$${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` : `${new Intl.NumberFormat('es-CL').format(total)}`
               }
-
-            </div>
-          </div>
-        </div>
+            </div >
+          </div >
+        </div >
         <div className="cart-options">
           {countProducts !== 0 ? (
-            <button className="button-pay" onClick={() => onMakePayment('Activate')}>Realizar Pago</button>
+            <button
+              className="button-pay"
+              onClick={() => onMakePayment("Activate")}
+            >
+              Realizar Pago
+            </button>
           ) : null}
-          <Link to="/tienda" className="button-buy" onClick={() => deactivate()}>Seguir Comprando</Link>
+          <Link
+            to="/tienda"
+            className="button-buy"
+            onClick={() => deactivate()}
+          >
+            Seguir Comprando
+          </Link>
         </div>
-      </div>
-
+      </div >
     </>
   );
 };

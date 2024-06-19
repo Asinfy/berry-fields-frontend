@@ -157,7 +157,7 @@ export const ProductPromotions = () => {
       <section className="promotion-section">
         <div className="promotion-header">
           <div className="promotion-title">
-            <span>Promociones</span>
+            <h2>Nuestras Ofertas</h2>
           </div>
           <div className="promotion-more">
             <button className="promotion-button-more">Ver más</button>

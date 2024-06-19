@@ -32,17 +32,20 @@
   margin-bottom: 15px;
   color: #3a2618;
   font-family: "Lexend Deca", sans-serif;
+  font-size: 16px;
 }
 
 .user-validation-form-container .form-row .form-column input {
   border-radius: 8px;
   border: 1px solid #cfcfcf;
-  font-size: 10px;
+  color: #3a2618;
+  font-size: 12px;
   padding: 8px;
   font-family: "Lexend Deca", sans-serif;
   outline: none;
   width: 100%;
   margin: 0px 12.5px 0px 0px;
+  font-weight: 600;
 }
 
 .user-validation-form-container .form-row .form-column input:focus {
@@ -50,7 +53,7 @@
 }
 
 .user-validation-form-container .form-row .form-column input::placeholder {
-  color: #b3b3b3;
+  color: #3a2618;
 }
 
 .user-validation-form-container .submit-button {

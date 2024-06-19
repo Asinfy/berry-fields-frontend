@@ -10,10 +10,10 @@ export const BannerBerryFields = () => {
         <div className="background-overlay">
           <div className="container">
             <div className="text-container">
-              <h1>
+              <h2>
                 Cambiando el mundo<br></br>desde las raices{" "}
                 <img src={Arcoiris}></img>
-              </h1>
+              </h2>
               <div className="row-span">
                 <div className="col-span">
                   <div className="icon">
@@ -21,7 +21,7 @@ export const BannerBerryFields = () => {
                   </div>
                   <div className="text">
                     <span className="text-lighter">Excelentes</span>
-                    <span className="text-bolder">Rebajas</span>
+                    <span className="text-bolder">Ofertas</span>
                   </div>
                 </div>
                 <span className="divider"></span>
