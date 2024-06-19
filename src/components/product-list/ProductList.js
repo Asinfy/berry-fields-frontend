@@ -39,7 +39,6 @@ export const ProductList = () => {
     }
   }, [location]);
 
-
   const handleInputChange = (event, produId) => {
     const value = event.target.value;
     setInputValues(prevInpuntValues => ({
@@ -67,9 +66,11 @@ export const ProductList = () => {
       setAllProducts([...allProducts, newProduct]);
     }
   };
+
   const getTotalQuantity = () => {
     return allProducts.reduce((acc, product) => acc + product.quantity, 1);
   };
+
   const renderProducts = () => {
     return (
       <div className="product-content">
@@ -102,12 +103,9 @@ export const ProductList = () => {
               </div>
             ) : ""
           ):(
-            <p> Tu producto no ha sido encontrado en nuestro sistema</p>
-            
+            <p>Revisa la ortografía de la palabra o utiliza palabras clave.</p>
           )
           }
-          
-        
         </div>
       </div>
     );
@@ -118,9 +116,9 @@ export const ProductList = () => {
       <section className="product-section" id="productos" ref={productosRef}>
         <div className="product-header">
           <div className="product-title">
-            <span>
-            {!search.length > 0 ? "Productos" : `Tu busqueda de  "${search}" es: ` }
-            </span>
+            <h2>
+            {!search.length > 0 ? "Nuestro Portafolio" : !filterProduct.length > 0 ? `No hay productos que coincidan con tu búsqueda de: "${search}".` : `Busqueda relacionada de: "${search}".` }
+            </h2>
           </div>
         </div>
           {renderProducts()}

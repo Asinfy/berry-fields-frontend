@@ -13,9 +13,12 @@
 }
 
 .product-section .product-title {
+  width: 100%;
+}
+
+.product-section .product-title h2 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 40px;
-  font-weight: 600;
   color: #3a2618;
 }
 
@@ -365,6 +368,10 @@
   .product-header {
     width: 90% !important;
     padding: 0px !important;
+  }
+  
+  .product-section .product-title h2 {
+    font-size: 36px;
   }
 
   .product-content {

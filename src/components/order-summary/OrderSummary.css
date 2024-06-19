@@ -25,7 +25,7 @@
 .cart-content-summary .cart-coupon .cart-coupon-data input {
   border-radius: 8px;
   border: 1px solid #CFCFCF;
-  font-size: 11px;
+  font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
   outline: none;
@@ -43,7 +43,7 @@
   color: #FFA64E;
   font-weight: 400;
   background-color: transparent;
-  font-size: 11px;
+  font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
 }
