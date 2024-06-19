@@ -29,7 +29,7 @@ export const UserValidation = () => {
   };
   
   const validation = async () => {
-    if (inputValue.length < 11 && inputValue.length > 7) {
+    if (inputValue.length < 11 && inputValue.length > 5) {
       try {
         const response = await axios.get(`https://zoho.accsolutions.tech/API/v1/Clientes_Report?where=Documento=="${inputValue}"`);
         if (response.data.data.length > 0) {
