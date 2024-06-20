@@ -17,7 +17,8 @@ export const Header = () => {
     setDiscount,
     setMakePayment,
     setShipmentData,
-    setDataRecord
+    setDataRecord, 
+    setDocument
   } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -38,12 +39,12 @@ export const Header = () => {
   useEffect(() => {
     const filteredProducts = Array.isArray(products)
       ? products.filter(
-          (product) =>
-            product.characteristics
-              .toLowerCase()
-              .startsWith(searchTerm.toLowerCase())
-          /* product.characteristics.toLowerCase().includes(searchTerm.toLowerCase()) */
-        )
+        (product) =>
+          product.characteristics
+            .toLowerCase()
+            .startsWith(searchTerm.toLowerCase())
+        /* product.characteristics.toLowerCase().includes(searchTerm.toLowerCase()) */
+      )
       : [];
     setFilterProduct(filteredProducts);
   }, [products, searchTerm]);
@@ -59,6 +60,7 @@ export const Header = () => {
     setShipmentData(null);
     setDataRecord(null);
     setDiscount([]);
+    setDocument('');
   }
 
   return (
