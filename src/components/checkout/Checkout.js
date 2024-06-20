@@ -10,13 +10,18 @@ export const Checkout = () => {
     setShipmentData,
     setDataRecord,
     shipmentData,
-    dataRecord
+    dataRecord,
+    setDiscount,
+    setDocument
   } = useContext(CartContext);
 
   const deactivate = () => {
     setMakePayment(null);
     setShipmentData(null);
     setDataRecord(null);
+    setDiscount([]);
+    setDocument('');
+
   }
   return (
     <>

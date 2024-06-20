@@ -13,12 +13,12 @@ export const OrderDetails = () => {
     setCountProducts,
     makePayment,
     countProducts,
+    setDiscount
   } = useContext(CartContext);
 
   const handleInputChange = (event, productId) => {
-    let value = parseInt(event.target.value);
-    if (value === NaN) {
-      value = 1;
+    let {value} = event.target;
+    if (value.trim() === "") {
       console.log(value)
       const updatedProducts = allProducts.map((product) =>
         product.id === productId ? { ...product, quantity: value } : product
@@ -81,6 +81,9 @@ export const OrderDetails = () => {
     );
     setTotal(total - product.quantity * parseInt(product.price));
     setAllProducts(updatedProducts);
+    if((total - product.quantity * parseInt(product.price))===0){
+      setDiscount([]);
+    }
   };
 
   const getTotalQuantity = () => {
@@ -102,6 +105,7 @@ export const OrderDetails = () => {
     setAllProducts([]);
     setTotal(0);
     setCountProducts(0);
+    setDiscount([]);
   };
 
   return (
