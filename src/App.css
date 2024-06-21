@@ -1,0 +1,20 @@
+:root {
+  --orange-dark: #fe7e00;
+  --orange-aux: #ff962e;
+  --orange-hover: #ffa64e;
+  --orange-light: #ffc892;
+  --brown-dark: #3a2618;
+  --brown-light: #7b6658;
+  --white-main: #ffffff;
+  --color-dark: #000000;
+  --white-cream: #f4f4f4;
+  --white-cream-aux: #fffbf5;
+  --gray-text: #616161;
+  --gray-text-aux: #c5c5c5;
+  --gray-border: #cfcfcf;
+  --gray-decor: #cccccc;
+  --color-beige: #fff2e2;
+  --brown-beige: #f2ded1;
+  --gray-hover: #e9e9e9;
+  --orange-cream: #fff0e1;
+}

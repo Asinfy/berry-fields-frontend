@@ -54,9 +54,11 @@ export const ProductPromotions = () => {
   const next = () => {
     sliderRef.slickNext();
   };
+  
   const previous = () => {
     sliderRef.slickPrev();
   };
+
   const settings = {
     dots: false,
     infinite: true,

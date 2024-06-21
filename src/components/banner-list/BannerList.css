@@ -1,65 +1,61 @@
-.banner-section {
+@import url("../../App.css");
+
+.slider-container {
+  width: calc(80% - 20px);
+  margin: 200px auto 0px;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  border-radius: 8px;
+}
+
+.slide img {
   width: 100%;
   height: auto;
-  margin: 200px 0px 50px 0px;
-  outline: none !important;
-}
-
-.banner-section .slider {
-  width: 80%;
-  height: auto;
-  margin: auto;
-  padding: 0 10px;
-  outline: none !important;
-  border-radius: 8px;
-}
-
-.banner-section .slider .slide .banner-img {
-  max-width: 100%;
-  height: auto;
   display: block;
-  outline: none !important;
-  border-radius: 8px;
+  border-radius: inherit;
+}
+
+.dots {
+  text-align: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: var(--orange-light);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: var(--orange-aux);
 }
 
 @media only screen and (max-width: 600px) {
-  .banner-section {
-    width: 100%;
-    height: auto;
-    margin: 25px 0px 50px 0px;
-  }
-
-  .banner-section .slider {
-    width: 90% !important;
-    height: auto;
-    margin: auto;
-    padding: 0px;
-  }
-
-  .banner-section .slider .banner-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  .slider-container {
+    width: 90%;
+    margin: 25px auto 0px;
+    overflow: hidden;
   }
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-  .banner-section {
-    width: 100%;
-    height: auto;
-    margin: 200px 0px 50px 0px;
-  }
-
-  .banner-section .slider {
+  .slider-container {
     width: 90%;
-    height: auto;
-    margin: auto;
-    padding: 0px;
-  }
-
-  .banner-section .slider .banner-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    margin: 175px auto 0px;
+    overflow: hidden;
   }
 }

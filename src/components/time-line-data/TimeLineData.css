@@ -1,3 +1,5 @@
+@import url("../../App.css");
+
 .data-user-container {
   width: 70%;
   margin: 0px auto 50px;
@@ -8,7 +10,7 @@
   text-align: center;
   margin: 0px auto 25px;
   font-family: "Lexend Deca", sans-serif;
-  color: #3A2618;
+  color: var(--brown-dark);
 }
 
 .data-user-container .data-user-content {

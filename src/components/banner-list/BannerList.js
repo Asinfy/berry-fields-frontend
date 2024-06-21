@@ -1,31 +1,51 @@
-import React from 'react';
-import Slider from "react-slick";
+import React, { useState, useEffect } from "react";
 import "./BannerList.css";
-import BannerImg from "../../assets/images/branding/carrousel-berry-fields.png";
+import BannerImg00 from "../../assets/images/branding/carrousel-berry-fields.png";
+import BannerImg01 from "../../assets/images/branding/carrousel-berry-fields.png";
 
 export const BannerList = () => {
-  const settings = {
-    className: "slider",
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+
+  const images = [
+    BannerImg00,
+    BannerImg01
+  ]
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
   };
-  
+
   return (
     <>
-     <section className="banner-section">
-        <Slider {...settings}>
-          <div className="slide">
-            <img src={BannerImg} className="banner-img" alt=""></img>
-          </div>
-          <div className="slide">
-            <img src={BannerImg} className="banner-img" alt=""></img>
-          </div>
-        </Slider>
-      </section>
+       <div className="slider-container">
+            <div 
+                className="slider"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+                {images.map((image, index) => (
+                    <div className="slide" key={index}>
+                        <img src={image} alt={`Imagen ${index + 1}`} />
+                    </div>
+                ))}
+            </div>
+            <div className="dots">
+                {images.map((_, index) => (
+                    <span
+                        key={index}
+                        className={`dot ${index === currentIndex ? 'active' : ''}`}
+                        onClick={() => goToSlide(index)}
+                    ></span>
+                ))}
+            </div>
+        </div>
     </>
-  )
-}
+  );
+};

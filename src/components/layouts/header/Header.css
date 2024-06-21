@@ -1,3 +1,5 @@
+@import url("../../../App.css");
+
 header {
   width: 100%;
   height: auto;
@@ -11,7 +13,7 @@ header {
   width: 100%;
   height: auto;
   z-index: 20;
-  background-color: #fffbf5;
+  background-color: var(--white-cream-aux);
   box-shadow: 0px 2px 10px #888888;
 }
 
@@ -19,7 +21,6 @@ header {
   width: 80%;
   height: 100px;
   margin: auto;
-  background-color: #fffbf5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,16 +66,16 @@ header {
   width: 90%;
   height: 50px;
   border-radius: 50px;
-  background-color: #f4f4f4;
+  background-color: var(--white-cream);
   display: center;
   align-items: center;
   align-content: center;
   padding: 10px 30px;
-  border: 2px solid #e9e9e9;
+  border: 2px solid var(--gray-hover);
   margin-right: 5px;
   font-size: 16px;
   font-weight: 300;
-  color: #616161;
+  color: var(--gray-text);
   font-family: "Poppins", sans-serif;
 }
 
@@ -85,7 +86,7 @@ header {
   .navbar-item
   .search-box
   .search-input:focus {
-  background-color: #e9e9e9;
+  background-color: var(--gray-hover);
   outline: none;
 }
 
@@ -93,10 +94,10 @@ header {
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background-color: #ff962e;
+  background-color: var(--orange-aux);
   border: none;
   font-size: 20px;
-  color: #ffffff;
+  color: var(--white-main);
 }
 
 .navbar
@@ -105,7 +106,7 @@ header {
   .navbar-item
   .search-box
   .search-button:hover {
-  background-color: #ffb267;
+  background-color: var(--orange-hover);
   cursor: pointer;
 }
 
@@ -130,14 +131,14 @@ header {
   .cart-input
   .cart-button {
   border-radius: 50px;
-  background-color: #ff962e;
+  background-color: var(--orange-aux);
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background-color: #ff962e;
+  background-color: var(--orange-aux);
   border: none;
   font-size: 20px;
-  color: #ffffff;
+  color: var(--white-main);
   display: block;
   text-align: center;
   line-height: 50px;
@@ -154,10 +155,10 @@ header {
   .count-cart {
   position: absolute;
   font-size: 11px;
-  color: #ffffff;
+  color: var(--white-main);
   top: -14px;
   right: -6px;
-  background-color: #111111;
+  background-color: #000000;
   line-height: 28px;
   width: 26px;
   height: 26px;
@@ -173,14 +174,14 @@ header {
   .cart-info
   .cart-input
   .cart-button:hover {
-  background-color: #ffb267;
+  background-color: var(--orange-hover);
   cursor: pointer;
 }
 
 .navbar .navbar-main .navbar-items .navbar-item .cart-info .cart-text {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .navbar
@@ -193,7 +194,7 @@ header {
   font-family: "Lexend Deca", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  color: #616161;
+  color: var(--gray-text);
 }
 
 .navbar
@@ -227,13 +228,13 @@ header {
 }
 
 .navbar .navbar-main .navbar-items .navbar-item p {
-  color: #616161;
+  color: var(--gray-text);
   font-family: "Lexend Deca", sans-serif;
   font-size: 24px;
 }
 
 .navbar .navbar-main .navbar-items .navbar-item p span {
-  color: #fe7e00;
+  color: var(--orange-dark);
 }
 
 .header-mb {
@@ -285,7 +286,6 @@ header {
     width: 100% !important;
     height: 10%;
     top: 0px;
-    background-color: rebeccapurple;
   }
 
   .navbar .navbar-items .navbar-item .navbar-title {
@@ -331,22 +331,22 @@ header {
     width: 80%;
     height: 50px;
     border-radius: 50px;
-    background-color: #f4f4f4;
+    background-color: var(--white-cream);
     display: center;
     align-items: center;
     align-content: center;
     padding: 10px 30px;
-    border: 2px solid #e9e9e9;
+    border: 2px solid var(--gray-hover);
     margin-right: 5px;
     font-size: 16px;
     font-weight: 300;
-    color: #616161;
+    color: var(--gray-text);
     font-family: "Poppins", sans-serif;
   }
 
   .header-mb .navbar-item .search-box .search-input:hover,
   .header-mb .navbar-item .search-box .search-input:focus {
-    background-color: #e9e9e9;
+    background-color: var(--gray-hover);
     outline: none;
   }
 
@@ -354,14 +354,14 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    background-color: #ff962e;
+    background-color: var(--orange-aux);
     border: none;
     font-size: 20px;
-    color: #ffffff;
+    color: var(--white-main);
   }
 
   .header-mb .navbar-item .search-box .search-button:hover {
-    background-color: #ffb267;
+    background-color: var(--orange-hover);
     cursor: pointer;
   }
 
@@ -371,13 +371,13 @@ header {
   }
 
   .header-mb .navbar-item .navbar-title p {
-    color: #616161;
+    color: var(--gray-text);
     font-family: "Lexend Deca", sans-serif;
     font-size: 17.3px;
   }
 
   .header-mb .navbar-item .navbar-title p span {
-    color: #fe7e00;
+    color: var(--orange-dark);
   }
   .navbar .navbar-main .navbar-items .navbar-item .navbar-logo img {
     width: 130px;
@@ -389,28 +389,10 @@ header {
     width: 100%;
     height: auto;
   }
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 20;
-    background-color: #fffbf5;
-    box-shadow: 0px 2px 10px #888888;
-  }
-
+  
   .navbar .navbar-main {
     width: 90%;
     height: 100px;
-    margin: auto;
-    background-color: #fffbf5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
   }
 
   .navbar .navbar-main .logo-header {
@@ -450,54 +432,16 @@ header {
   .navbar .navbar-main .navbar-items .navbar-item .search-box .search-input {
     width: 75%;
     height: 50px;
-    border-radius: 50px;
-    background-color: #f4f4f4;
-    display: center;
-    align-items: center;
-    align-content: center;
-    padding: 10px 30px;
-    border: 2px solid #e9e9e9;
-    margin-right: 5px;
-    font-size: 16px;
-    font-weight: 300;
-    color: #616161;
-    font-family: "Poppins", sans-serif;
-  }
-
-  .navbar
-    .navbar-main
-    .navbar-items
-    .navbar-item
-    .search-box
-    .search-input:hover,
-  .navbar
-    .navbar-main
-    .navbar-items
-    .navbar-item
-    .search-box
-    .search-input:focus {
-    background-color: #e9e9e9;
-    outline: none;
   }
 
   .navbar .navbar-main .navbar-items .navbar-item .search-box .search-button {
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    background-color: #ff962e;
+    background-color: var(--orange-aux);
     border: none;
     font-size: 20px;
-    color: #ffffff;
-  }
-
-  .navbar
-    .navbar-main
-    .navbar-items
-    .navbar-item
-    .search-box
-    .search-button:hover {
-    background-color: #ffb267;
-    cursor: pointer;
+    color: var(--white-main);
   }
 
   .navbar .navbar-main .navbar-items .navbar-item .cart-info {
@@ -521,14 +465,14 @@ header {
     .cart-input
     .cart-button {
     border-radius: 50px;
-    background-color: #ff962e;
+    background-color: var(--orange-aux);
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    background-color: #ff962e;
+    background-color: var(--orange-aux);
     border: none;
     font-size: 20px;
-    color: #ffffff;
+    color: var(--white-main);
     display: block;
     text-align: center;
     line-height: 50px;
@@ -545,10 +489,10 @@ header {
     .count-cart {
     position: absolute;
     font-size: 11px;
-    color: #ffffff;
+    color: var(--white-main);
     top: -12px;
     right: -3px;
-    background-color: #111111;
+    background-color: #000000;
     line-height: 24px;
     width: 24px;
     height: 24px;
@@ -562,29 +506,12 @@ header {
     .navbar-items
     .navbar-item
     .cart-info
-    .cart-input
-    .cart-button:hover {
-    background-color: #ffb267;
-    cursor: pointer;
-  }
-
-  .navbar .navbar-main .navbar-items .navbar-item .cart-info .cart-text {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-  }
-
-  .navbar
-    .navbar-main
-    .navbar-items
-    .navbar-item
-    .cart-info
     .cart-text
     .cart-title {
     font-family: "Lexend Deca", sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #616161;
+    color: var(--gray-text);
   }
 
   .navbar
@@ -617,16 +544,30 @@ header {
   }
 
   .navbar .navbar-main .navbar-items .navbar-item p {
-    color: #616161;
+    color: var(--gray-text);
     font-family: "Lexend Deca", sans-serif;
     font-size: 18px;
   }
 
   .navbar .navbar-main .navbar-items .navbar-item p span {
-    color: #fe7e00;
+    color: var(--orange-dark);
   }
 
   .header-mb {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .navbar .navbar-main .navbar-items .navbar-item .search-box .search-input {
+    width: 86%;
+    height: 50px;
+  }
+}
+
+@media only screen and (min-width: 1600px) { 
+  .navbar .navbar-main .navbar-items .navbar-item .search-box .search-input {
+    width: 87.5%;
+    height: 50px;
   }
 }

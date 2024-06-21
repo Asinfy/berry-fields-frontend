@@ -7,7 +7,7 @@
 }
 
 .user-register-form-container h2 {
-  color: #3a2618;
+  color: var(--brown-dark);
   margin-bottom: 25px;
   font-family: "Lexend Deca", sans-serif;
 }
@@ -29,7 +29,7 @@
   width: 100%;
   margin-bottom: 15px;
   font-family: "Lexend Deca", sans-serif;
-  color: #3a2618;
+  color: var(--brown-dark);
 }
 
 .user-register-form-container .form-row .form-column input,
@@ -42,7 +42,7 @@
   font-family: "Lexend Deca", sans-serif;
   outline: none;
   width: 100%;
-  color: #3a2618;
+  color: var(--brown-dark);
   font-weight: 400;
 }
 
@@ -52,15 +52,15 @@
 
 .user-register-form-container .form-row .form-column input:focus,
 .user-register-form-container .form-row .form-column select:focus {
-  border: 1px solid #fe7e00;
+  border: 1px solid var(--orange-aux);
 }
 
 .user-register-form-container .form-row .form-column input::placeholder {
-  color: #3a2618;
+  color: var(--brown-dark);
 }
 
 .user-register-form-container .form-row .form-column select option {
-  color: #3a2618;
+  color: var(--brown-dark);
 }
 
 .user-register-form-container .form-row .form-column .label {
@@ -92,7 +92,7 @@
   font-weight: 400;
   font-size: 12px;
   display: inline-block;
-  color: #3a2618;
+  color: var(--brown-dark);
 }
 
 .user-register-form-container
@@ -119,14 +119,18 @@
 
 .user-register-form-container .submit-button button {
   padding: 10px 60px;
-  background-color: #ffb267;
-  color: white;
+  background-color: var(--orange-aux);
+  color: var(--white-main);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bolder;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
+}
+
+.user-register-form-container .submit-button button:hover {
+  background-color: var(--orange-hover);
 }
 
 @media only screen and (max-width: 600px) {

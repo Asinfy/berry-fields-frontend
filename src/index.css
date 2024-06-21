@@ -6,14 +6,9 @@
 }
 
 body {
-  background-color: #ffffff;
-  overflow-x: hidden;
+  background-color: var(--white-main);
 }
 
 img {
   display: block !important;
-}
-
-.container {
-  width: 100% !important;
 }

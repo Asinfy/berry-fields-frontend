@@ -1,14 +1,16 @@
+@import url(../../../App.css);
+
 .scrolling-text {
 display: flex;
 justify-content: flex-start;
-background-color: #ffb267;
+background-color: var(--orange-hover);
 overflow: hidden;
 padding: 10px 0px;
 }
 
 .scrolling-text span {
   font-size: 14px;
-  color: #ffffff;
+  color: var(--white-main);
   text-transform: uppercase;
   font-weight: bolder;
   white-space: nowrap;

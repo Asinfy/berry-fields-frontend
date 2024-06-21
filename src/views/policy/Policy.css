@@ -36,7 +36,7 @@
 }
 
 .privacy_section a {
-  background-color: #ff962e;
+  background-color: var(--orange-aux);
   text-decoration: none;
   display: block;
   padding: 10px 20px;
@@ -45,11 +45,11 @@
   width: max-content;
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
-  color: #ffffff;
+  color: var(--white-main);
 }
 
 .privacy_section a:hover {
-  background-color: #FFA64E;
+  background-color: var(--orange-hover);
 }
 
 .privacy_section img {

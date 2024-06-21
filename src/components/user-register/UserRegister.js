@@ -221,7 +221,7 @@ export const UserRegister = () => {
                   value={formData.Tipo1}
                   onChange={handleChange}
                 >
-                  <option value="">Seleciona una opcion</option>
+                <option value="">Seleciona una Opción</option>
                   <option value="CC">CC</option>
                   <option value="NIT">NIT</option>
                   <option value="PPT">PPT</option>
@@ -249,7 +249,7 @@ export const UserRegister = () => {
                   value={formData.Codigo_Deapartamento}
                   onChange={handleCombinedChange}
                 >
-                  <option value="">Seleciona una opcion</option>
+                  <option value="">Seleciona una Opción</option>
                   {departmentList.map((department) =>
                     <option value={department.Codigo_Deapartamento} key={department.Codigo_Deapartamento}>
                       {department.Departamento}
@@ -265,7 +265,7 @@ export const UserRegister = () => {
                   value={formData.Codigo_Municipio}
                   onChange={handleChange}
                 >
-                  <option value="">Seleciona una opcion</option>
+                  <option value="">Seleciona una Opción</option>
                   {cityList.map((city) =>
                     <option value={city.Codigo_Municipio} key={city.Codigo_Municipio}>
                       {city.Municipio}
