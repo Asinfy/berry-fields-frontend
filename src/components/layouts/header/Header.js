@@ -70,9 +70,9 @@ export const Header = () => {
           <ScrollingText></ScrollingText>
           <div className="navbar-main">
             <div className="logo-header">
-              <a to="/" onClick={() => deactivate()}>
+              <Link to="/" onClick={() => deactivate()}>
                 <img src={LogoBerry} alt="Logo de BerryFields."></img>
-              </a>
+              </Link>
             </div>
             <div className="navbar-items">
               {location.pathname !== "/carrito" &&
