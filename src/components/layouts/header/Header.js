@@ -12,11 +12,13 @@ export const Header = () => {
     total,
     countProducts,
     productList,
-    setProductList,
-    filterProduct,
     setFilterProduct,
-    search,
     setSearch,
+    setDiscount,
+    setMakePayment,
+    setShipmentData,
+    setDataRecord, 
+    setDocument
   } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
@@ -37,12 +39,12 @@ export const Header = () => {
   useEffect(() => {
     const filteredProducts = Array.isArray(products)
       ? products.filter(
-          (product) =>
-            product.characteristics
-              .toLowerCase()
-              .startsWith(searchTerm.toLowerCase())
-          /* product.characteristics.toLowerCase().includes(searchTerm.toLowerCase()) */
-        )
+        (product) =>
+          product.characteristics
+            .toLowerCase()
+            .startsWith(searchTerm.toLowerCase())
+        /* product.characteristics.toLowerCase().includes(searchTerm.toLowerCase()) */
+      )
       : [];
     setFilterProduct(filteredProducts);
   }, [products, searchTerm]);
@@ -53,6 +55,14 @@ export const Header = () => {
 
   const location = useLocation();
 
+  const deactivate = () => {
+    setMakePayment(null);
+    setShipmentData(null);
+    setDataRecord(null);
+    setDiscount([]);
+    setDocument('');
+  }
+
   return (
     <>
       <header>
@@ -60,7 +70,7 @@ export const Header = () => {
           <ScrollingText></ScrollingText>
           <div className="navbar-main">
             <div className="logo-header">
-              <a href="/">
+              <a to="/" onClick={() => deactivate()}>
                 <img src={LogoBerry} alt="Logo de BerryFields."></img>
               </a>
             </div>

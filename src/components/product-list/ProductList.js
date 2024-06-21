@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState,useRef } from "react";
 import "./ProductList.css";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import { useLocation } from 'react-router-dom';
+import IconProm from "../../assets/images/branding/Promo-Icon.png";
 
 export const ProductList = () => {
   const [inputValues, setInputValues] = useState({});
@@ -77,10 +78,18 @@ export const ProductList = () => {
         <div className="product-cards">
           {filterProduct.length > 0 ?
           filterProduct.flatMap((product) =>
-            product.Promotion === "No" && filterProduct.length > 0 ? (
+            filterProduct.length > 0 ? (
               <div className="col-product-content" key={product.id}>
                 <div className="product-card">
                   <div className="product-card-top">
+                    {product.Promotion === "Si" ? (
+                      <img
+                          className="promotion-label"
+                          src={IconProm}
+                          alt="Etiqueta de Promoción."
+                        ></img>
+
+                    ):null}
                     <div className="product-image">
                       <img src={product.image} alt="Etiqueta de Producto." />
                     </div>

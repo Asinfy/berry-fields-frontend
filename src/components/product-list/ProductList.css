@@ -108,6 +108,14 @@
   padding: 40px;
 }
 
+.promotion-label {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 .product-section
   .product-content
   .product-cards

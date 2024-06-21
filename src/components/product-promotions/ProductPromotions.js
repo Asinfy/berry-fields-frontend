@@ -26,13 +26,13 @@ export const ProductPromotions = () => {
 
   const onAddProducts = (product) => {
     const inputValue = inputValues[product.id] || 1;
-    if (allProducts.find((item) => item.id=== product.id)) {
+    if (allProducts.find((item) => item.id === product.id)) {
       const updatedProducts = allProducts.map((item) =>
-        item.id=== product.id
+        item.id === product.id
           ? {
-              ...item,
-              quantity: parseInt(item.quantity) + parseInt(inputValue),
-            }
+            ...item,
+            quantity: parseInt(item.quantity) + parseInt(inputValue),
+          }
           : item
       );
 
@@ -46,7 +46,7 @@ export const ProductPromotions = () => {
       setAllProducts([...allProducts, newProduct]);
     }
   };
-  
+
   const getTotalQuantity = () => {
     return allProducts.reduce((acc, product) => acc + product.quantity, 1);
   };
@@ -117,33 +117,33 @@ export const ProductPromotions = () => {
         >
           {productList.flatMap((product) =>
             product.Promotion === "Si" ? (
-              <div className="col-promotion-card"key={product.id}>
-              <div className="promotion-card" >
-                <div className="promotion-card-top">
-                  <img
-                    className="promotion-label"
-                    src={IconProm}
-                    alt="Etiqueta de Promoción."
-                  ></img>
-                  <div className="product-image">
-                    <img src={product.image} alt="Etiqueta de Producto." />
+              <div className="col-promotion-card" key={product.id}>
+                <div className="promotion-card" >
+                  <div className="promotion-card-top">
+                    <img
+                      className="promotion-label"
+                      src={IconProm}
+                      alt="Etiqueta de Promoción."
+                    ></img>
+                    <div className="product-image">
+                      <img src={product.image} alt="Etiqueta de Producto." />
+                    </div>
                   </div>
-                </div>
-                <div className="promotion-card-bottom">
-                  <span className="category">{product.category}</span>
-                  <span className="title"> {product.name}</span>
-                  <span className="weight">{product.characteristics.toLowerCase() !== product.name ? product.characteristics: ''}</span>
-                  <span className="price">${new Intl.NumberFormat('es-CL').format(product.price)} COP</span>
-                  <div className="card-product-cart">
-                    <div className="card-product-buy-button">
-                      <button className="product-add" onClick={() => onAddProducts(product)}>
-                        <span>{allProducts.find(item => item.id === product.id)?`Agregado (${allProducts.find(item =>item.id === product.id)?.quantity})`: 'Agregar'}</span>
-                        <i className="fa-solid fa-cart-shopping"></i>
-                      </button>
+                  <div className="promotion-card-bottom">
+                    <span className="category">{product.category}</span>
+                    <span className="title"> {product.name}</span>
+                    <span className="weight">{product.characteristics.toLowerCase() !== product.name ? product.characteristics : ''}</span>
+                    <span className="price">${new Intl.NumberFormat('es-CL').format(product.price)} COP</span>
+                    <div className="card-product-cart">
+                      <div className="card-product-buy-button">
+                        <button className="product-add" onClick={() => onAddProducts(product)}>
+                          <span>{allProducts.find(item => item.id === product.id) ? `Agregado (${allProducts.find(item => item.id === product.id)?.quantity})` : 'Agregar'}</span>
+                          <i className="fa-solid fa-cart-shopping"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
             ) : (
               ""

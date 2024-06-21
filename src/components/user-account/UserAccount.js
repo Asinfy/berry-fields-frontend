@@ -12,6 +12,7 @@ export const UserAccount = () => {
     total,
     setAllProducts,
     setTotal,
+    discount,
     setCountProducts
   } = useContext(CartContext);
   const [departmentList, setDepartmentList] = useState([]);
@@ -121,17 +122,34 @@ export const UserAccount = () => {
     }));
     console.log(formData)
   };
+  let DATA = [];
 
+  //fecha con la zona horaria de colombia
+  const fechaActual = () => {
+    const options = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      /* hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit', */
+      timeZone: 'America/Bogota'
+    };
+
+    const currentDateWithTimezone = new Date().toLocaleDateString('es-ES', options);
+    // Formatear la fecha en el orden año-mes-día
+    const [day, month, year] = currentDateWithTimezone.split('/');
+    return `${year}-${month}-${day}`;
+  }
   //enviamos los datos a la api del back para generar la orden y de una vez a wonpi
   const funcionPost = async (total) => {
-    let DATA = [];
-    const fechaActual = new Date().toISOString().split('T')[0];
     let Numero_ID = Math.random() * 10;
+    const newTotal = discount.length > 0 ? (total - (discount[0].Porcentaje / 100) * total) : total
 
     const total1 = {
-      amount: total,
+      amount: newTotal,
       ID: Numero_ID,
-      Fecha: fechaActual,
+      Fecha: fechaActual(),
       E_Cormers: "bfs",
     };
 
@@ -178,14 +196,14 @@ export const UserAccount = () => {
         const mapSend = {
           Referencia: datos.reference,
           Productos: products,
-          Fecha: fechaActual,
-          Total: total,
+          Fecha: fechaActual(),
+          Total: newTotal,
           ID1: shipmentData.user.ID,
           Direccion: `${formData.Direccion}, ${formData.Municipio}, ${formData.Deapartamento}`,
           Descripcion: "Berry Fields",
           Estado: "PENDING",
           Clientes: shipmentData.user.ID,
-          Cupon: "No uso cupon",
+          Cupon: discount.length > 0 ? discount[0].Codigo_Descuento : "No uso cupon",
         };
         console.log(mapSend);
 
@@ -206,12 +224,18 @@ export const UserAccount = () => {
         }
       });
 
+      //en caso de que el cupon sea de un solo uso desactivarlo cunado lo use
+
+      
       // Deshabilitar btn de pagar
       document.getElementById("btnPedir").disabled = true;
-
+      
       // Borrar datos almacenados de la paquina
       emptyCart();
-
+      if (discount[0].Un_solo_uso === "Si") {
+        const URL_API = `https://zoho.accsolutions.tech/API/v1/All_Descuentos_Berries/${discount[0].ID}`;
+        const response = await axios.patch(URL_API, { "Estado": "Inactivo" })
+      }
     } catch (error) {
       console.error("Error al hacer la petición:", error);
     }

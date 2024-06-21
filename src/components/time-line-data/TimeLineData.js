@@ -4,25 +4,24 @@ import "./TimeLineData.css"
 
 import { UserRegister } from "../user-register/UserRegister";
 import { UserAccount } from "../user-account/UserAccount";
-import { UserValidation } from "../user-validation/UserValidation";
+/* import { UserValidation } from "../user-validation/UserValidation"; */
 
 export const TimeLineData = () => {
   const {
-    makePayment,
+    /* makePayment, */
     shipmentData,
     dataRecord
   } = useContext(CartContext);
-  /* console.log(shipmentData) */
   return (
     <>
-      {makePayment || dataRecord || shipmentData ? (
+      {/* makePayment || */ dataRecord || shipmentData ? (
         <div className="data-user-container">
           <h1>Ingresa tus datos</h1>
           <div className="data-user-content">
 
-            {makePayment ? (
+            {/* {makePayment ? (
               <UserValidation />
-            ) : null}
+            ) : null} */}
             {dataRecord ? (
               <UserRegister />
             ) : null}
