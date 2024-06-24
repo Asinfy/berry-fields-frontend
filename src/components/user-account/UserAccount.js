@@ -176,14 +176,14 @@ export const UserAccount = () => {
               product.productPlan.map(p => ({
                 price_product: parseInt(product.price) / product.CompositeProduct.length / parseInt(p.Cantidad),
                 Gramos: p.Cantidad,
-                Total: parseInt(product.price) / product.CompositeProduct.length,
+                Total: (product.quantity * parseInt(product.price) )/ product.CompositeProduct.length,
                 ID_Product: p.Productos.ID
               }))
               :
               [{
                 price_product: product.price / product.amount,
                 Gramos: product.amount,
-                Total: parseInt(product.price),
+                Total: product.quantity * parseInt(product.price),
                 ID_Product: product.idProduct //producto del producto berry
               }]
           })
