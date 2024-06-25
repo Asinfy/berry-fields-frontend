@@ -17,8 +17,8 @@ export const OrderDetails = () => {
   } = useContext(CartContext);
 
   const handleInputChange = (event, productId) => {
-    let {value} = event.target;
-    if (value.trim() === "") {
+    let { value } = event.target;
+    if (value.trim() === "" || value < 0) {
       console.log(value)
       const updatedProducts = allProducts.map((product) =>
         product.id === productId ? { ...product, quantity: value } : product
@@ -34,18 +34,24 @@ export const OrderDetails = () => {
   };
 
   const onInputBlur = (event, productId) => {
-    const value =
-      event.target.value === "" || event.target.value === "0"
-        ? 1
-        : parseInt(event.target.value);
-    if (event.target.value === "" || event.target.value === "0") {
-      const updatedProducts = allProducts.map((product) =>
-        product.id === productId ? { ...product, quantity: value } : product
-      );
+    let value = event.target.value;
 
-      setAllProducts(updatedProducts);
+    // Eliminar cualquier signo '+' o '-' y caracteres no numéricos
+    value = value.replace(/[^\d]/g, "");
+
+    // Si el valor es vacío o "0", establecer el valor a 1
+    if (value === "" || value === "0") {
+      value = 1;
+    } else {
+      value = parseInt(value);
     }
 
+    // Actualizar la cantidad del producto correspondiente
+    const updatedProducts = allProducts.map((product) =>
+      product.id === productId ? { ...product, quantity: value } : product
+    );
+
+    setAllProducts(updatedProducts);
   };
 
   const onUpdateProduct = (product, action) => {
@@ -81,7 +87,7 @@ export const OrderDetails = () => {
     );
     setTotal(total - product.quantity * parseInt(product.price));
     setAllProducts(updatedProducts);
-    if((total - product.quantity * parseInt(product.price))===0){
+    if ((total - product.quantity * parseInt(product.price)) === 0) {
       setDiscount([]);
     }
   };
@@ -189,6 +195,6 @@ export const OrderDetails = () => {
       ) : null}
     </>
   );
-  
+
 
 };

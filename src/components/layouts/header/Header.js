@@ -17,7 +17,7 @@ export const Header = () => {
     setDiscount,
     setMakePayment,
     setShipmentData,
-    setDataRecord, 
+    setDataRecord,
     setDocument
   } = useContext(CartContext);
   const [searchTerm, setSearchTerm] = useState("");
@@ -35,6 +35,9 @@ export const Header = () => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
     setSearch(event.target.value);
+    if (event.key === 'Enter') {
+      handleButtonClick();
+    }
   };
   useEffect(() => {
     const filteredProducts = Array.isArray(products)
@@ -84,7 +87,8 @@ export const Header = () => {
                         type="search"
                         placeholder="Buscar producto..."
                         value={searchTerm}
-                        onChange={handleSearchChange}
+                        onChange={handleSearchChange} 
+                        onKeyDown={handleSearchChange}
                       />
                       <button
                         className="search-button"
