@@ -117,8 +117,8 @@ footer .footerButtom {
 footer .whatsaap-flotante {
   display: block !important;
   position: fixed;
-  right: 25px;
-  bottom: 100px;
+  right: 35px;
+  bottom: 35px;
   z-index: 30;
 }
 
