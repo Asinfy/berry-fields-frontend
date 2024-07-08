@@ -222,9 +222,9 @@ export const UserRegister = () => {
                   onChange={handleChange}
                 >
                 <option value="">Seleciona una Opción</option>
-                  <option value="CC">CC</option>
-                  <option value="NIT">NIT</option>
-                  <option value="PPT">PPT</option>
+                  <option value="cc">CC</option>
+                  <option value="nit">NIT</option>
+                  <option value="ppt">PPT</option>
                 </select>
               </div>
               <div className="form-column-aux">
