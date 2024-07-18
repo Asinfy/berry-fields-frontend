@@ -155,7 +155,7 @@ export const UserRegister = () => {
       })
       console.log('Respuesta del servidor:', response.data.message);
       console.log(formData);
-      addMessage('success', 'Registro','Su registro a la base de datos BERRY FIELDS fue correto' )
+      addMessage('success', 'Registro','Su registro a la base de datos BERRY FIELDS fue correcto' )
       alert("registro exitoso");
       setDataRecord(null);
       setShipmentData(null)
