@@ -174,9 +174,9 @@ export const UserAccount = () => {
             name: product.name,
             gramos: product.CompositeProduct === "true" ?
               product.productPlan.map(p => ({
-                price_product: parseInt(product.price) / product.CompositeProduct.length / parseInt(p.Cantidad),
+                price_product: parseInt(product.price) / product.productPlan.length / parseInt(p.Cantidad),
                 Gramos: product.quantity * p.Cantidad,
-                Total: (product.quantity * parseInt(product.price) )/ product.CompositeProduct.length,
+                Total: (product.quantity * parseInt(product.price) )/ product.productPlan.length,
                 ID_Product: p.Productos.ID
               }))
               :
@@ -189,6 +189,7 @@ export const UserAccount = () => {
           })
         }
         console.log(acc)
+        console.log(product.productPlan.length)
         return acc
       }, [])
 
@@ -207,7 +208,7 @@ export const UserAccount = () => {
         };
         console.log(mapSend);
 
-        try {
+        /* try {
           // hacemos la peticion para validar si la orden esta generada
           const URL_BERRY = 'https://zoho.accsolutions.tech/API/v1/verificar_pedido';
           axios.post(URL_BERRY, mapSend, {
@@ -221,21 +222,21 @@ export const UserAccount = () => {
           });
         } catch (error) {
           console.error('Error al verificar pedido:', error);
-        }
+        } */
       });
 
       //en caso de que el cupon sea de un solo uso desactivarlo cunado lo use
 
       
       // Deshabilitar btn de pagar
-      document.getElementById("btnPedir").disabled = true;
+      /* document.getElementById("btnPedir").disabled = true;
       
       // Borrar datos almacenados de la paquina
       emptyCart();
       if (discount[0].Un_solo_uso === "Si") {
         const URL_API = `https://zoho.accsolutions.tech/API/v1/All_Descuentos_Berries/${discount[0].ID}`;
         const response = await axios.patch(URL_API, { "Estado": "Inactivo" })
-      }
+      } */
     } catch (error) {
       console.error("Error al hacer la petición:", error);
     }
