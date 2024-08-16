@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import LogoBerryHorinzontal from "../../../assets/images/branding/logo-berry-horizontal.svg";
-import LogoIndustriaComercio from "../../../assets/images/branding/Logo-industria-comercio.svg";
-import LogoAsinfy from "../../../assets/images/branding/logo-asinfy.svg";
+import LogoBerryHorinzontal from "../../../assets/images/branding/logo-berry-horizontal.png";
+import LogoIndustriaComercio from "../../../assets/images/branding/logo-industria-comercio.png";
+import LogoAsincode from "../../../assets/images/branding/logo-asincode.png";
 
 export const Footer = () => {
   return (
@@ -103,13 +103,13 @@ export const Footer = () => {
             <h5>Legal</h5>
             <Link to="/politica">Política de Tratamiento de datos</Link>
             <img src={LogoIndustriaComercio} alt=""></img>
-            <img src={LogoAsinfy} alt=""></img>
+            <a className="logo-href" href="https://asincode.co" target="blank"><img src={LogoAsincode} alt=""></img></a>
           </div>
         </div>
         <div className="footerButtom">
           <p>
             Copyright © 2024 BerryFields. Desarrollado por{" "}
-            <strong>Asinfy.</strong>
+            <a href="https://asincode.co" target="blank"><strong>Asincode.</strong></a>
           </p>
         </div>
       </footer>

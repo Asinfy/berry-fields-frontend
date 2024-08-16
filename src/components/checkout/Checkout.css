@@ -13,23 +13,23 @@
 .berry-checkout-timeLine .berry-checkout-timeLineDivider {
   text-decoration: none;
   text-align: center;
-  color: var(--gray-border);
+  color: var(--color-text-gray);
   width: max-content;
 }
 
 .berry-checkout-timeLine .berry-checkout-timeLineDivider {
   width: 300px;
   height: 3px;
-  background-color: var(--gray-border);
+  background-color: var(--color-text-gray);
   margin-top: -40px;
 }
 
 .berry-checkout-timeLine .berry-checkout-timeLineItem.active {
-  color: #000000;
+  color: var(--color-text-dark);
 }
 
 .berry-checkout-timeLine .berry-checkout-timeLineDivider.active {
-  background-color: var(--orange-aux);
+  background-color: var(--color-blue-dark);
 }
 
 .berry-checkout-timeLine
@@ -38,8 +38,8 @@
   display: block;
   width: 64px;
   height: 64px;
-  color: var(--gray-border);
-  background-color: var(--white-cream);
+  color: var(--color-text-gray);
+  background-color: var(--color-white-cream);
   border-radius: 100%;
   text-align: center;
   line-height: 64px;
@@ -49,8 +49,8 @@
 .berry-checkout-timeLine
   .berry-checkout-timeLineItem.active
   .berry-checkout-timeLineIcon {
-  background-color: var(--orange-aux);
-  color: var(--white-main);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white-main);
 }
 
 .berry-checkout-timeLine
@@ -61,14 +61,14 @@
   margin: 5px auto;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
-  color: var(--gray-border);
+  color: var(--color-text-gray);
   text-align: center;
 }
 
 .berry-checkout-timeLine
   .berry-checkout-timeLineItem.active
   .berry-checkout-timeLineMessage {
-  color: #000000;
+  color: var(--color-text-dark);
 }
 
 @media only screen and (max-width: 600px) {
@@ -82,7 +82,6 @@
   .berry-checkout-timeLine .berry-checkout-timeLineDivider {
     width: 75px;
     height: 3px;
-    background-color: #cccccc;
     margin-top: -25px;
   }
   .berry-checkout-timeLine
@@ -102,7 +101,6 @@
   margin: 5px auto;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  color: #cfcfcf;
 }
 }
 
@@ -117,7 +115,6 @@
   .berry-checkout-timeLine .berry-checkout-timeLineDivider {
     width: 170px;
     height: 3px;
-    background-color: #cccccc;
     margin-top: -25px;
   }
   .berry-checkout-timeLine
@@ -137,6 +134,5 @@
   margin: 5px auto;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
-  color: #cfcfcf;
 }
 }

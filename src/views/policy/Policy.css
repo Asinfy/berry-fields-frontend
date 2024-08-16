@@ -15,28 +15,28 @@
 }
 
 .privacy_section h1 {
-  color: #545454;
+  color: var(--color-text-gray);
   font-family: "Lexend Deca", sans-serif;
   text-align: center;
   font-size: 32px;
 }
 
 .privacy_section h2 {
-  color: #545454;
+  color: var(--color-text-gray);
   font-family: "Lexend Deca", sans-serif;
   font-size: 24px;
   margin-left: 10px;
 }
 
 .privacy_section p {
-  color: #545454;
+  color: var(--color-text-gray);
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
   text-align: justify;
 }
 
 .privacy_section a {
-  background-color: var(--orange-aux);
+  background-color: var(--color-blue-dark);
   text-decoration: none;
   display: block;
   padding: 10px 20px;
@@ -45,11 +45,11 @@
   width: max-content;
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
-  color: var(--white-main);
+  color: var(--color-white-main);
 }
 
 .privacy_section a:hover {
-  background-color: var(--orange-hover);
+  background-color: var(--color-blue-circle);
 }
 
 .privacy_section img {

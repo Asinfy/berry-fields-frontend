@@ -1,8 +1,9 @@
 @import url(../../../App.css);
 
 footer {
-  background-color: var(--color-beige) !important;
+  background-color: var(--color-blue-cream) !important;
   font-family: "Lexend", sans-serif;
+  border-top: 4px solid var(--color-white-main) !important;
 }
 
 footer .footer-container {
@@ -26,7 +27,7 @@ footer .footer-container .footer-left img {
 
 footer .footer-container .footer-left p {
   font-size: 14px;
-  color: var(--gray-text);
+  color: var(--color-text-gray);
   font-family: "Lexend Deca", sans-serif;
 }
 
@@ -48,14 +49,14 @@ footer .footer-container .footer-left ul li a {
   line-height: 40px;
   font-size: 18px;
   border-radius: 8px;
-  color: #3a2618;
-  background-color: var(--white-main);
-  border: 1px solid var(--gray-border);
+  color: var(--color-blue-dark);
+  background-color: var(--color-white-main);
+  border: 1px solid var(--color-border-gray);
 }
 
 footer .footer-container .footer-left ul li a:hover {
-  background-color: var(--brown-dark);
-  color: var(--white-main);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white-main);
 }
 
 footer .footer-container .footer-center {
@@ -66,12 +67,12 @@ footer .footer-container .footer-center h5 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 footer .footer-container .footer-center p {
   margin-top: 10px;
-  color: var(--gray-text);
+  color: var(--color-text-gray);
   font-family: "Lexend Deca", sans-serif;
 }
 
@@ -83,15 +84,19 @@ footer .footer-container .footer-right h5 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 20px;
   text-transform: uppercase;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 footer .footer-container .footer-right a {
   display: block;
   margin: 10px 0px 0px 0px;
-  color: var(--gray-text);
+  color: var(--color-text-gray);
   text-decoration: none;
   font-family: "Lexend Deca", sans-serif;
+}
+
+footer .footer-container .footer-right .logo-href {
+  margin: 0;
 }
 
 footer .footer-container .footer-right a:hover {
@@ -108,10 +113,19 @@ footer .footerButtom {
   width: 100%;
   padding: 25px 0px;
   text-align: center;
-  background-color: var(--brown-dark);
-  color: var(--white-main);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white-main);
   font-size: 16px;
   font-family: "Lexend Deca", sans-serif;
+}
+
+footer .footerButtom a {
+  color: var(--color-white-main);
+  text-decoration: none;
+}
+
+footer .footerButtom a:hover {
+  text-decoration: underline;
 }
 
 footer .whatsaap-flotante {

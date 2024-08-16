@@ -1,6 +1,6 @@
 import React from "react";
 import "./BannerBerryFields.css";
-import PlatoBerryImg from "../../../assets/images/branding/plato-de-berries-banner.png";
+import PlatoBerryImg from "../../../assets/images/branding/plato-banner-berry.png";
 import Arcoiris from "../../../assets/images/branding/arcoiris-berryfields-banner.png";
 
 export const BannerBerryFields = () => {

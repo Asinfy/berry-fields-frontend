@@ -3,14 +3,14 @@
 .scrolling-text {
 display: flex;
 justify-content: flex-start;
-background-color: var(--orange-hover);
+background-color: var(--color-blue-dark);
 overflow: hidden;
 padding: 10px 0px;
 }
 
 .scrolling-text span {
   font-size: 14px;
-  color: var(--white-main);
+  color: var(--color-white-main);
   text-transform: uppercase;
   font-weight: bolder;
   white-space: nowrap;

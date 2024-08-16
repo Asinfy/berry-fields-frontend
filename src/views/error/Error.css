@@ -1,3 +1,5 @@
+@import url("../../App.css");
+
 .container-notfound {
   width: 100%;
   height: auto;
@@ -27,7 +29,7 @@
 }
 
 .container-notfound .container .text-container h1 {
-  color: #fe7e00;
+  color: var(--color-blue-dark);
   font-size: 150px;
   font-family: "Lexend Deca", sans-serif;
 }
@@ -38,7 +40,7 @@
   font-weight: 600;
   display: block;
   margin-top: 25px;
-  color: #4e3f31;
+  color: var(--color-text-dark);
 }
 
 @media only screen and (max-width: 600px) {

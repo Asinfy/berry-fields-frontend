@@ -5,10 +5,10 @@
 }
 
 .cart-content-summary .cart-coupon {
-  background-color: var(--white-cream-aux);
+  background-color: var(--color-blue-cream);
   padding: 25px;
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   margin-bottom: 25px;
 }
 
@@ -26,7 +26,7 @@
 
 .cart-content-summary .cart-coupon .cart-coupon-data input {
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
@@ -36,30 +36,30 @@
 }
 
 .cart-content-summary .cart-coupon .cart-coupon-data input:focus {
-  border: 1px solid var(--orange-aux);
+  border: 1px solid var(--color-blue-dark);
 }
 
 .cart-content-summary .cart-coupon .cart-coupon-data button {
   border-radius: 8px;
-  border: 1px solid var(--orange-aux);
-  color: var(--orange-aux);
+  border: 1px solid var(--color-blue-dark);
+  color: var(--color-blue-dark);
   font-weight: 400;
-  background-color: transparent;
+  background-color: var(--color-white-main);
   font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
 }
 
 .cart-content-summary .cart-coupon .cart-coupon-data button:hover {
-  background-color: var(--orange-aux);
-  color: var(--white-main);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white-main);
 }
 
 .cart-content-summary .validation-user {
-  background-color: var(--white-cream-aux);
+  background-color: var(--color-blue-cream);
   padding: 25px;
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   margin-bottom: 25px;
 }
 
@@ -72,7 +72,7 @@
 
 .cart-content-summary .validation-user input {
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   font-size: 12px;
   padding: 10px;
   font-family: "Lexend Deca", sans-serif;
@@ -82,13 +82,13 @@
 }
 
 .cart-content-summary .validation-user input:focus {
-  border: 1px solid var(--orange-aux);
+  border: 1px solid var(--color-blue-dark);
 }
 
 .cart-content-summary .cart-summation {
-  background-color: var(--white-cream-aux);
+  background-color: var(--color-blue-cream);
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   margin-bottom: 25px;
 }
 
@@ -117,13 +117,13 @@
 }
 
 .cart-content-summary .cart-summation .footer-summation {
-  background-color: var(--orange-cream);
+  background-color: var(--color-blue-cream-special);
   padding: 15px 25px;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
   border-radius: 0px 0px 8px 8px;
-  border-top: 1px solid var(--gray-border);
+  border-top: 1px solid var(--color-border-gray);
 }
 
 .cart-content-summary .cart-summation .footer-summation .grand-total {
@@ -133,7 +133,7 @@
 
 .cart-content-summary .cart-summation .footer-summation .total-mycart {
   font-weight: bolder;
-  color: var(--orange-dark);
+  color: var(--color-blue-dark);
   font-family: "Inter", sans-serif;
 }
 
@@ -152,23 +152,24 @@
 }
 
 .cart-content-summary .cart-options .button-pay {
-  background-color: var(--orange-aux);
+  background-color: var(--color-blue-dark);
   outline: none;
-  border: var(--orange-aux);
-  color: var(--white-main);
+  border: 1px solid var(--color-blue-dark);
+  color: var(--color-white-main);
   font-weight: bolder;
 }
 
 .cart-content-summary .cart-options .button-pay:hover {
-background-color: var(--orange-hover);
+background-color: var(--color-blue-circle);
+border: 1px solid var(--color-blue-circle);
 cursor: pointer;
 }
 
 .cart-content-summary .cart-options .button-buy {
   background-color: transparent;
   outline: none;
-  border: 1px solid var(--orange-aux);
-  color: var(--orange-aux);
+  border: 1px solid var(--color-blue-dark);
+  color: var(--color-blue-dark);
   font-weight: 300;
   display: block;
   padding: 8px;
@@ -181,6 +182,6 @@ cursor: pointer;
 }
 
 .cart-content-summary .cart-options .button-buy:hover {
-  background-color: var(--orange-aux);
-  color: var(--white-main);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white-main);
 }

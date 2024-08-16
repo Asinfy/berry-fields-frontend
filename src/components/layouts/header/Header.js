@@ -2,8 +2,8 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "../../../contexts/ShoppingCartContext";
 import "./Header.css";
 import LogoBerry from "../../../assets/images/branding/logo-berry.svg";
-import LogoAsinfy from "../../../assets/images/branding/logo-asinfy.svg";
-import LogoWompi from "../../../assets/images/branding/wompi-logo-principal.png";
+import LogoAsincode from "../../../assets/images/branding/logo-asincode.png";
+import LogoWompi from "../../../assets/images/branding/logo-wompi.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ScrollingText } from "../scrolling-text/ScrollingText";
 
@@ -146,7 +146,7 @@ export const Header = () => {
                     </p>
                   </div>
                   <div className="navbar-logo">
-                    <img src={LogoAsinfy} alt="" />
+                    <img src={LogoAsincode} alt="" />
                   </div>
                 </div>
               )}

@@ -62,7 +62,7 @@ export const OrderSummary = () => {
     if (/^\d*$/.test(value)) {
       setDocument(value);
       if (value.length > 10) {
-        addMessage('warning', 'Advertencia!', 'Su documento tiene más de 10 dígitos');
+        addMessage('warning', 'Advertencia', 'El documento ingresado contiene más de 10 dígitos. Por favor, verifique la información.');
       }
     }
   };
@@ -80,7 +80,7 @@ export const OrderSummary = () => {
           response.data.data[0].Fecha_Fin1 >= fechaActual()) {
           //utilizamos este condicional para ver si el cupon tiene un solo uso y siendo el caso que solo sea un solo uso se aviza por medio de un mensaje al usuario
           if (response.data.data[0].Un_solo_uso === "Si") {
-            addMessage('confirm', 'Confirmar Acción', 'Cupón de descuento tiene un solo uso');
+            addMessage('confirm', 'Confirmar Acción', 'Este cupón de descuento puede usarse una sola vez.');
 
             const confirmation = await confirmMessage();
 
@@ -94,16 +94,16 @@ export const OrderSummary = () => {
             setDiscount(response.data.data);
           }
         } else {
-          addMessage('warning', 'Advertencia!', 'Cupón de descuento está inactivo');
+          addMessage('warning', 'Advertencia', 'Este cupón de descuento no está activo en este momento.');
           deactivate();
         }
       } catch (error) {
         deactivate();
-        addMessage('error', 'Error', 'Cupón no existe');
+        addMessage('error', 'Error', 'Este cupón no está disponible.');
       }
     } else {
       
-      addMessage('error', 'Error', 'Ingresar el código del cupón');
+      addMessage('error', 'Error', 'Ingrese el código del cupón.');
     }
   }
 
@@ -134,9 +134,9 @@ export const OrderSummary = () => {
         console.error('Error en la validación:', error);
       }
     } else if (document.length === 0) {
-      addMessage('error', 'Error', 'Ingresar Documento');
+      addMessage('error', 'Error', 'El documento ingresado no es válido.');
     } else {
-      addMessage('warning', 'Advertencia!', 'Documento ingresado no valido');
+      addMessage('warning', 'Advertencia', 'Documento ingresado no valido');
     }
   };
 
@@ -185,7 +185,7 @@ export const OrderSummary = () => {
             </div>
             <div className="row">
               <div className="mycart-item-text">Descuento:</div>
-              <div className="mycart-item-price">{discount.length > 0 ? `- $${new Intl.NumberFormat('es-CL').format((discount[0].Porcentaje / 100) * total)}` : "0"}</div>
+              <div className="mycart-item-price">${discount.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format((discount[0].Porcentaje / 100) * total)}` : "0"}</div>
             </div>
             <div className="row">
               <div className="mycart-item-text">Costo de Envío:</div>
@@ -194,9 +194,9 @@ export const OrderSummary = () => {
           </div>
           <div className="footer-summation">
             <div className="grand-total">Total:</div>
-            <div className="total-mycart">
+            <div className="total-mycart">$
               {discount.length > 0 ?
-                `$${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` : `${new Intl.NumberFormat('es-CL').format(total)}`
+                `${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` : `${new Intl.NumberFormat('es-CL').format(total)}`
               }
             </div>
           </div>

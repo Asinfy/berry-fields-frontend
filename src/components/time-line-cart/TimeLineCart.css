@@ -10,7 +10,7 @@
   text-align: center;
   margin: 0px auto 25px;
   font-family: "Lexend Deca", sans-serif;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .shopping-cart-container .shopping-cart-content {

@@ -21,7 +21,7 @@
 .promotion-title h2 {
   font-family: "Lexend Deca", sans-serif;
   font-size: 40px;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .promotion-more {
@@ -64,7 +64,7 @@
 
 .promotion-card {
   height: auto;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
   overflow: hidden;
   width: 100%;
@@ -73,7 +73,7 @@
 .promotion-card .promotion-card-top {
   width: 100%;
   height: auto;
-  background-color: var(--white-main);
+  background-color: var(--color-white-main);
   position: relative;
 }
 
@@ -101,8 +101,8 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 100%;
-  background-color: var(--orange-light);
-  color: var(--brown-dark);
+  background-color: var(--color-blue-circle);
+  color: var(--color-text-dark);
   border: none;
   display: block;
   width: 48px;
@@ -112,7 +112,7 @@
 }
 
 .promotion-button:hover {
-  background-color: var(--orange-hover);
+  background-color: var(--color-blue-cream-special);
 }
 
 .prev-btn {
@@ -126,9 +126,9 @@
 .promotion-card .promotion-card-bottom {
   width: 100%;
   height: 215px;
-  background-color: var(--orange-cream);
+  background-color: var(--color-blue-cream);
   padding: 15px;
-  border-top: 1px solid var(--gray-border);
+  border-top: 1px solid var(--color-border-gray);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -136,7 +136,7 @@
 
 .promotion-card .promotion-card-bottom .category {
   font-size: 14px;
-  color: var(--orange-dark);
+  color: var(--color-text-blue);
   font-weight: 300;
   text-align: left;
   font-family: "Lexend Deca", sans-serif;
@@ -144,7 +144,7 @@
 
 .promotion-card .promotion-card-bottom .title {
   font-size: 16px;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
   font-weight: bolder;
   text-align: left;
   font-family: "Poppins", sans-serif;
@@ -153,7 +153,7 @@
 
 .promotion-card .promotion-card-bottom .weight {
   font-size: 14px;
-  color: var(--gray-text-aux);
+  color: var(--color-text-gray);
   font-weight: 300;
   text-align: left;
   font-family: "Lexend Deca", sans-serif;
@@ -161,7 +161,7 @@
 
 .promotion-card .promotion-card-bottom .price {
   font-size: 20px;
-  color: var(--orange-dark);
+  color: var(--color-text-blue);
   font-weight: 600;
   text-align: left;
   margin: 8px 0px;
@@ -211,9 +211,9 @@
   .card-product-cart
   .card-product-buy-button
   .product-add {
-  background-color: var(--orange-aux);
+  background-color: var(--color-blue-dark);
   padding: 10px 15px;
-  color: var(--white-main);
+  color: var(--color-white-main);
   border: none;
   border-radius: 25px;
   font-size: 12px;
@@ -228,7 +228,7 @@
   .card-product-cart
   .card-product-buy-button
   .product-add:hover {
-    background-color: var(--orange-hover);
+    background-color: var(--color-blue-circle);
   }
 
 .promotion-card

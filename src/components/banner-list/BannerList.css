@@ -33,7 +33,7 @@
   height: 10px;
   width: 10px;
   margin: 0 5px;
-  background-color: var(--orange-light);
+  background-color: var(--color-blue-cream);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -41,7 +41,7 @@
 }
 
 .dot.active {
-  background-color: var(--orange-aux);
+  background-color: var(--color-blue-dark);
 }
 
 @media only screen and (max-width: 600px) {

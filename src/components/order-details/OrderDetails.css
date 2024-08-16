@@ -2,10 +2,10 @@
 
 .cart-content-details {
   flex: 0 0 calc(75% - 15px);
-  background-color: var(--white-cream-aux);
+  background-color: var(--color-blue-cream);
   padding: 25px;
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
 }
 
 .cart-content-details .cart-content-details-header {
@@ -21,7 +21,7 @@
 }
 
 .cart-content-details .cart-content-details-header a {
-  color: var(--orange-dark);
+  color: var( --color-text-dark);
   font-weight: 600;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
@@ -41,8 +41,8 @@
   align-items: center;
   column-gap: 15px;
   margin-bottom: 25px;
-  background-color: var(--white-main);
-  border: 1px solid var(--gray-border);
+  background-color: var(--color-white-main);
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
 }
 
@@ -65,14 +65,14 @@
 }
 
 .product-info .category {
-  color: var(--orange-dark);
+  color: var(--color-text-blue);
   font-family: "Lexend Deca", sans-serif;
   font-weight: 300;
   font-size: 14px;
 }
 
 .product-info .name {
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
   margin: 2px 0px;
@@ -80,7 +80,7 @@
 }
 
 .product-info .weight {
-  color: var(--gray-border);
+  color: var(--color-text-gray);
   font-family: "Lexend Deca", sans-serif;
   font-weight: 300;
   font-size: 14px;
@@ -91,7 +91,7 @@
 }
 
 .product-price .price {
-  color: var(--orange-dark);
+  color: var(--color-text-blue);
   font-family: "Poppins", sans-serif;
   font-weight: bolder;
   font-size: 14px;
@@ -107,7 +107,7 @@
   margin: 0px 5px;
   text-align: center;
   border-radius: 4px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   font-weight: bolder;
   outline: none;
   font-size: 12px;
@@ -120,7 +120,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .product-amount input:focus {
-  border: 1px solid var(--orange-dark);
+  border: 1px solid var(--color-blue-aux);
 }
 
 .product-amount .change-quantity {
@@ -128,8 +128,8 @@ input[type="number"]::-webkit-inner-spin-button {
   height: 20px;
   font-size: 10px;
   border-radius: 100%;
-  background-color: var(--orange-light);
-  color: var(--brown-dark);
+  background-color: var(--color-blue-circle);
+  color: var(--color-text-dark);
   font-weight: bolder;
   border: none;
   outline: none;
@@ -141,7 +141,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .product-option .delete {
   background-color: transparent;
-  color: var(--orange-dark);
+  color: var(--color-text-blue);
   border: none;
   outline: none;
   font-size: 20px;

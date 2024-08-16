@@ -4,14 +4,14 @@
   width: 100%;
   margin: 25px auto 0px;
   padding: 25px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   border-radius: 8px;
 }
 
 .user-account-form-container h2 {
   margin-bottom: 25px;
   font-family: "Lexend Deca", sans-serif;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .user-account-form-container .form-row {
@@ -31,20 +31,20 @@
   width: 100%;
   margin-bottom: 15px;
   font-family: "Lexend Deca", sans-serif;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .user-account-form-container .form-row .form-column input,
 .user-account-form-container .form-row .form-column select {
   padding: 8px;
   border-radius: 8px;
-  border: 1px solid var(--gray-border);
+  border: 1px solid var(--color-border-gray);
   font-size: 12px;
   padding: 8px;
   font-family: "Lexend Deca", sans-serif;
   outline: none;
   width: 100%;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
   font-weight: 400;
 }
 
@@ -54,15 +54,15 @@
 
 .user-account-form-container .form-row .form-column input:focus,
 .user-account-form-container .form-row .form-column select:focus {
-  border: 1px solid var(--orange-aux);
+  border: 1px solid var(--color-blue-dark);
 }
 
 .user-account-form-container .form-row .form-column input::placeholder {
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .user-account-form-container .form-row .form-column select option {
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .user-account-form-container .form-row .form-column .label {
@@ -94,7 +94,7 @@
   font-weight: 400;
   font-size: 12px;
   display: inline-block;
-  color: var(--brown-dark);
+  color: var(--color-text-dark);
 }
 
 .user-account-form-container
@@ -118,8 +118,8 @@
 
 .user-account-form-container .submit-button button {
   padding: 10px 60px;
-  background-color: var(--orange-aux);
-  color: var(--white-main);
+  background-color: var(--color-blue-dark);
+  color: var(--color-white-main);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -129,7 +129,7 @@
 }
 
 .user-account-form-container .submit-button button:hover {
-  background-color: var(--orange-hover);
+  background-color: var(--color-blue-circle);
 }
 
 @media only screen and (max-width: 600px) {
