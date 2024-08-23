@@ -181,9 +181,9 @@ export const UserAccount = () => {
               }))
               :
               [{
-                price_product: product.price / product.amount,
+                price_product: discount.length > 0 ? parseInt(product.price / product.amount) - parseInt(( (product.price / product.amount) * (discount[0].Porcentaje / 100) ))  : product.price / product.amount,
                 Gramos: product.quantity * product.amount,
-                Total: product.quantity * parseInt(product.price),
+                Total: discount.length > 0 ? parseInt(product.quantity * product.price - ( (product.quantity * product.price) * (discount[0].Porcentaje / 100) ) )  : product.quantity * parseInt(product.price),
                 ID_Product: product.idProduct //producto del producto berry
               }]
           })
