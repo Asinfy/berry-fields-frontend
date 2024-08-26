@@ -13,10 +13,12 @@ export const UserAccount = () => {
     setAllProducts,
     setTotal,
     discount,
+    discountDefault,
     setCountProducts
   } = useContext(CartContext);
   const [departmentList, setDepartmentList] = useState([]);
   const [cityList, setCityList] = useState([]);
+  const [inventory, setInventory] = useState([]);
   const [error, setError] = useState(null);
   //variables que se utiliza para manejar los datos que modifica el usuario 
   const [formData, setFormData] = useState({
@@ -48,7 +50,21 @@ export const UserAccount = () => {
         console.error("Error al obtener los municipios", error);
       }
     };
+
+    const fetchInventory = async() => {
+      try { 
+        const response = await axios.get("https://zoho.accsolutions.tech/API/v1/Inventario_berry");
+        const {data} = await response.data;
+        setInventory(data);
+        console.log(data);
+      } catch (error) {
+        console.log(`Error al traer los productos del inventario - error ${error.message }`);
+      }
+    }
+
     fetchDepartment();
+    fetchInventory();
+    
   }, []);
 
   useEffect(() => {
@@ -167,11 +183,23 @@ export const UserAccount = () => {
       const products = allProducts.reduce((acc, product) => {
         const found = acc.find(item => item.id === product.id);
         if (!found) {
+          
+          const product_inventory = inventory.filter(productInv => productInv.Productos.ID === product.idProduct);
+          console.log(product_inventory);
+          let price_desc_default =  0;
+          let price_product = 0;
+          
+          if (discountDefault.length > 0) {
+            price_desc_default = parseInt(product_inventory[0].Costo) + parseInt((product_inventory[0].Costo) * (discountDefault[0].Porcentaje / 100));
+            price_product = parseInt(price_desc_default * product.amount);
+          }
+
           acc.push({
             id: product.id, //producto  general 
             quantity: product.quantity,
             price: product.price,
             name: product.name,
+
             gramos: product.CompositeProduct === "true" ?
               product.productPlan.map(p => ({
                 price_product: parseInt(product.price) / product.productPlan.length / parseInt(p.Cantidad),
@@ -181,12 +209,26 @@ export const UserAccount = () => {
               }))
               :
               [{
-                price_product: discount.length > 0 ? parseInt(product.price / product.amount) - parseInt(( (product.price / product.amount) * (discount[0].Porcentaje / 100) ))  : product.price / product.amount,
+
+                price_product: discount.length > 0 ? product.price / product.amount - (( (product.price / product.amount) * (discount[0].Porcentaje / 100) ))  //Descento cupon
+                              //Descuento por defecto
+                              : discountDefault.length > 0 ? price_desc_default 
+                              //Normal
+                              : product.price / product.amount,
+                              
                 Gramos: product.quantity * product.amount,
-                Total: discount.length > 0 ? parseInt(product.quantity * product.price - ( (product.quantity * product.price) * (discount[0].Porcentaje / 100) ) )  : product.quantity * parseInt(product.price),
+
+                Total: discount.length > 0 ? `${product.quantity * parseInt(product.price)} - ${product.price} - ${((product.quantity * parseInt(product.price)) * (discount[0].Porcentaje / 100) )}` //Descento cupon
+                      //Descuento por defecto
+                      : discountDefault.length > 0 ? product.quantity * price_product
+                      //Normal
+                      : product.quantity * parseInt(product.price),
+
                 ID_Product: product.idProduct //producto del producto berry
               }]
+              
           })
+          
         }
         console.log(acc)
         console.log(product.productPlan.length)
@@ -208,7 +250,7 @@ export const UserAccount = () => {
         };
         console.log(mapSend);
 
-        try {
+        /* try {
           // hacemos la peticion para validar si la orden esta generada
           const URL_BERRY = 'https://zoho.accsolutions.tech/API/v1/verificar_pedido';
           axios.post(URL_BERRY, mapSend, {
@@ -222,21 +264,21 @@ export const UserAccount = () => {
           });
         } catch (error) {
           console.error('Error al verificar pedido:', error);
-        } 
+        }  */
       });
 
       //en caso de que el cupon sea de un solo uso desactivarlo cunado lo use
 
       
       // Deshabilitar btn de pagar
-      document.getElementById("btnPedir").disabled = true;
+      //document.getElementById("btnPedir").disabled = true;
       
       // Borrar datos almacenados de la paquina
-      emptyCart();
-      if (discount[0].Un_solo_uso === "Si") {
+     // emptyCart();
+      /* if (discount[0].Un_solo_uso === "Si") {
         const URL_API = `https://zoho.accsolutions.tech/API/v1/All_Descuentos_Berries/${discount[0].ID}`;
         const response = await axios.patch(URL_API, { "Estado": "Inactivo" })
-      } 
+      }  */
     } catch (error) {
       console.error("Error al hacer la petición:", error);
     }

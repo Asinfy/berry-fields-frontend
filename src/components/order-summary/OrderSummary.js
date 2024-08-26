@@ -16,11 +16,14 @@ export const OrderSummary = () => {
     setDiscount,
     document,
     setDocument,
+    discountDefault,
+    setDiscountDefault
+    
   } = useContext(CartContext);
 
   const { addMessage, confirmMessage } = useMessage();
   const [inputValue, setInputValue] = useState('');
-  const [discountDefault, setDiscountDefault] = useState('');
+  
   const [error, setError] = useState('');
   const documento = useRef();
 
@@ -132,30 +135,31 @@ export const OrderSummary = () => {
           }, {});
 
           //Verificar que la persona que tienen un descuento por defecto no pueda aplicar el cupon de descuento
-          if (dataObject.user.Descuento_berry === "Si" && discount.length !== 0) {
-            console.log("No puede usar el cupón descuento ya que viene con uno establecido");
-          }else{
+          if (discount.length === 0 && dataObject.user.Descuento_berry === "Si") {
+           // console.log("No puede usar el cupón descuento ya que viene con uno establecido");
 
-            //
-            if(dataObject.user.Descuento_berry === "Si") {
+  
     
-              if (discountDefault.length !== 0 && discountDefault !== null) {
-                setDataRecord(null);
-                setShipmentData(dataObject);
-                setDiscount(discountDefault);
-              }else{
-                setDiscountDefault([{
-                  Porcentaje: 10
-                }]);
-         
-              }
-
-            }else{
+            if (discountDefault.length !== 0 && discountDefault !== null) {
               setDataRecord(null);
               setShipmentData(dataObject);
+              
+            }else{
+              setDiscountDefault([{
+                Porcentaje: 10
+              }]);
+        
             }
+
             
+
+          }else{
+              setDataRecord(null);
+              setShipmentData(dataObject);
+              setDiscountDefault([]);
           }
+            
+          
 
         } else {
           setShipmentData(null);
