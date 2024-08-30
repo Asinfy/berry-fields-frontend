@@ -4,12 +4,15 @@ import { CartContext } from "../../contexts/ShoppingCartContext";
 import "../order-summary/OrderSummary.css";
 import axios from "axios";
 import { useMessage } from "../../contexts/MessageContext";
+import { discountEmployee } from "../../helpers/discountEmployee";
+import { discountCoupon } from "../../helpers/discountCoupon";
 
 export const OrderSummary = () => {
   const {
     total,
     countProducts,
     /* setMakePayment, */
+    allProducts,
     setShipmentData,
     setDataRecord,
     discount,
@@ -17,17 +20,30 @@ export const OrderSummary = () => {
     document,
     setDocument,
     discountDefault,
-    setDiscountDefault
-    
+    setDiscountDefault,
+    inventory,
+    setInventory
+
   } = useContext(CartContext);
 
   const { addMessage, confirmMessage } = useMessage();
   const [inputValue, setInputValue] = useState('');
-  
+
   const [error, setError] = useState('');
   const documento = useRef();
 
-
+useEffect( () => {
+  const fetchInventory = async() => {
+    try { 
+      const response = await axios.get("https://zoho.accsolutions.tech/API/v1/Inventario_berry");
+      const {data} = await response.data;
+      setInventory(data);
+    } catch (error) {
+      console.log(`Error al traer los productos del inventario - error ${error.message }`);
+    }
+  }
+  fetchInventory();
+}, []);
 
   //para desactivar las variables que controlan el componente
   const deactivate = () => {
@@ -74,6 +90,7 @@ export const OrderSummary = () => {
         addMessage('warning', 'Advertencia', 'El documento ingresado contiene más de 10 dígitos. Por favor, verifique la información.');
       }
     }
+    setDiscountDefault([]);
   };
 
   //validamos el cupon de descuento 
@@ -95,7 +112,14 @@ export const OrderSummary = () => {
 
             //siendo el caso que el usuario ubiera decidido usar el cupon se carga el cupon para hacer el descuento
             if (confirmation) {
-              setDiscount(response.data.data);
+
+              let data_discount = response.data.data;
+              
+          
+              setDiscount(data_discount);
+              
+             
+              
             } else {
               deactivate();
             }
@@ -145,8 +169,11 @@ export const OrderSummary = () => {
               setShipmentData(dataObject);
               
             }else{
+           
+            
+
               setDiscountDefault([{
-                Porcentaje: 10
+                Porcentaje: discountEmployee(allProducts, inventory, total, discount)
               }]);
         
             }
@@ -228,7 +255,7 @@ export const OrderSummary = () => {
               <div className="mycart-item-text">Descuento:</div>
               <div className="mycart-item-price">
                 ${discount.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format((discount[0].Porcentaje / 100) * total)}`
-                  : discountDefault.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format((discountDefault[0].Porcentaje / 100) * total)}`
+                  : discountDefault.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format( parseInt(  (discountDefault[0].Porcentaje / 100) * total)) }`
                   : "0"}
                 </div>
             </div>
@@ -240,8 +267,8 @@ export const OrderSummary = () => {
           <div className="footer-summation">
             <div className="grand-total">Total:</div>
             <div className="total-mycart">$
-              {discount.length > 0 ? `${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` 
-                : discountDefault.length > 0 ? `${new Intl.NumberFormat('es-CL').format(total - (discountDefault[0].Porcentaje / 100) * total)}` 
+              {discount.length > 0 ? `${new Intl.NumberFormat('es-CL').format(parseInt(total - (discount[0].Porcentaje / 100) * total))}` 
+                : discountDefault.length > 0 ? `${new Intl.NumberFormat('es-CL').format(parseInt(total - (discountDefault[0].Porcentaje / 100) * total))}` 
                 : `${new Intl.NumberFormat('es-CL').format(total)}`
               }
             </div>

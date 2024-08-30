@@ -14,11 +14,14 @@ export const UserAccount = () => {
     setTotal,
     discount,
     discountDefault,
-    setCountProducts
+    setCountProducts,
+    inventory,
+    setInventory,
+    totalDiscount
   } = useContext(CartContext);
   const [departmentList, setDepartmentList] = useState([]);
   const [cityList, setCityList] = useState([]);
-  const [inventory, setInventory] = useState([]);
+
   const [error, setError] = useState(null);
   //variables que se utiliza para manejar los datos que modifica el usuario 
   const [formData, setFormData] = useState({
@@ -51,20 +54,21 @@ export const UserAccount = () => {
       }
     };
 
+  
     const fetchInventory = async() => {
       try { 
         const response = await axios.get("https://zoho.accsolutions.tech/API/v1/Inventario_berry");
         const {data} = await response.data;
         setInventory(data);
-        console.log(data);
       } catch (error) {
         console.log(`Error al traer los productos del inventario - error ${error.message }`);
       }
     }
+    fetchInventory();
+
 
     fetchDepartment();
-    fetchInventory();
-    
+  
   }, []);
 
   useEffect(() => {
@@ -160,7 +164,7 @@ export const UserAccount = () => {
   //enviamos los datos a la api del back para generar la orden y de una vez a wonpi
   const funcionPost = async (total) => {
     let Numero_ID = Math.random() * 10;
-    const newTotal = discount.length > 0 ? (total - (discount[0].Porcentaje / 100) * total) : total
+    const newTotal = discount.length > 0 ? (total - (discount[0].Porcentaje / 100) * total) : discountDefault.length > 0 ? Math.round(total - (discountDefault[0].Porcentaje / 100) * total) : total;
 
     const total1 = {
       amount: newTotal,
@@ -183,34 +187,48 @@ export const UserAccount = () => {
       const products = allProducts.reduce((acc, product) => {
         const found = acc.find(item => item.id === product.id);
         if (!found) {
-          
+      
           const product_inventory = inventory.filter(productInv => productInv.Productos.ID === product.idProduct);
           console.log(product_inventory);
           let price_desc_default =  0;
           let price_product = 0;
-          
-          if (discountDefault.length > 0) {
-            price_desc_default = parseInt(product_inventory[0].Costo) + parseInt((product_inventory[0].Costo) * (discountDefault[0].Porcentaje / 100));
+         
+          if (discountDefault.length > 0 && product_inventory.length > 0) {
+            let aprox = parseInt(product_inventory[0].Costo) * 0.10;
+            console.log(aprox);
+            price_desc_default = aprox < 1 ? parseInt(product_inventory[0].Costo) + 1 : parseInt(product_inventory[0].Costo) + Math.round(aprox);
+            console.log(price_desc_default);
             price_product = parseInt(price_desc_default * product.amount);
           }
 
+          let price_total_mix = 0;
+
           acc.push({
             id: product.id, //producto  general 
-            quantity: product.quantity,
-            price: product.price,
+           
             name: product.name,
 
             gramos: product.CompositeProduct === "true" ?
-              product.productPlan.map(p => ({
-                price_product: parseInt(product.price) / product.productPlan.length / parseInt(p.Cantidad),
-                Gramos: product.quantity * p.Cantidad,
-                Total: (product.quantity * parseInt(product.price) )/ product.productPlan.length,
-                ID_Product: p.Productos.ID
-              }))
+              product.productPlan.map(p => {
+                const product_inventory = inventory.filter(productInv => productInv.Productos.ID ===  p.Productos.ID);
+                let aprox = parseInt(product_inventory[0].Costo) * 0.10;
+       
+                price_desc_default = aprox < 1 ? parseInt(product_inventory[0].Costo) + 1 : parseInt(product_inventory[0].Costo) + Math.round(aprox);
+                price_total_mix += price_desc_default * parseInt(p.Cantidad);
+                return {
+                  price_product: discountDefault.length > 0 ?  price_desc_default
+                                :  parseInt(product.price) / product.productPlan.length / parseInt(p.Cantidad),
+                  Gramos: product.quantity * p.Cantidad,
+                  Total: discountDefault.length > 0 ? (price_desc_default * parseInt(p.Cantidad)) * product.quantity 
+                              : (product.quantity * parseInt(product.price) )/ product.productPlan.length,
+                  ID_Product: p.Productos.ID
+
+                }
+              })
               :
               [{
 
-                price_product: discount.length > 0 ? product.price / product.amount - (( (product.price / product.amount) * (discount[0].Porcentaje / 100) ))  //Descento cupon
+                price_product: discount.length > 0 ? product.price / product.amount  //Descento cupon
                               //Descuento por defecto
                               : discountDefault.length > 0 ? price_desc_default 
                               //Normal
@@ -218,14 +236,19 @@ export const UserAccount = () => {
                               
                 Gramos: product.quantity * product.amount,
 
-                Total: discount.length > 0 ? `${product.quantity * parseInt(product.price)} - ${product.price} - ${((product.quantity * parseInt(product.price)) * (discount[0].Porcentaje / 100) )}` //Descento cupon
+                Total: discount.length > 0 ? product.quantity * parseInt(product.price) //Descento cupon
                       //Descuento por defecto
                       : discountDefault.length > 0 ? product.quantity * price_product
                       //Normal
                       : product.quantity * parseInt(product.price),
 
                 ID_Product: product.idProduct //producto del producto berry
-              }]
+              }],
+              quantity: product.quantity,
+              price: discount.length > 0 ? product.price 
+              : discountDefault.length > 0 && product.CompositeProduct === "true" ? price_total_mix
+              : discountDefault.length > 0 ? price_product 
+              : product.price,
               
           })
           
@@ -264,21 +287,21 @@ export const UserAccount = () => {
           });
         } catch (error) {
           console.error('Error al verificar pedido:', error);
-        }  */
+        } */ 
       });
 
       //en caso de que el cupon sea de un solo uso desactivarlo cunado lo use
 
       
       // Deshabilitar btn de pagar
-      //document.getElementById("btnPedir").disabled = true;
+      document.getElementById("btnPedir").disabled = true;
       
       // Borrar datos almacenados de la paquina
      // emptyCart();
-      /* if (discount[0].Un_solo_uso === "Si") {
+     /*  if (discount[0].Un_solo_uso === "Si") {
         const URL_API = `https://zoho.accsolutions.tech/API/v1/All_Descuentos_Berries/${discount[0].ID}`;
         const response = await axios.patch(URL_API, { "Estado": "Inactivo" })
-      }  */
+      } */ 
     } catch (error) {
       console.error("Error al hacer la petición:", error);
     }

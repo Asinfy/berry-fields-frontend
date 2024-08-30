@@ -3,6 +3,7 @@ import "./ProductList.css";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import { useLocation } from 'react-router-dom';
 import IconProm from "../../assets/images/branding/Promo-Icon.png";
+import axios from 'axios';
 
 export const ProductList = () => {
   const [inputValues, setInputValues] = useState({});
@@ -15,7 +16,8 @@ export const ProductList = () => {
     setTotal,
     setCountProducts,
     filterProduct,
-    search
+    search,
+    setInventory
   } = useContext(CartContext);
 
   const location = useLocation();
@@ -31,7 +33,18 @@ export const ProductList = () => {
       }
     };
 
+    const fetchInventory = async() => {
+      try { 
+        const response = await axios.get("https://zoho.accsolutions.tech/API/v1/Inventario_berry");
+        const {data} = await response.data;
+        setInventory(data);
+      } catch (error) {
+        console.log(`Error al traer los productos del inventario - error ${error.message }`);
+      }
+    }
+    fetchInventory();
     fetchProducts();
+
   }, [filterProduct]);
 
   useEffect(() => {

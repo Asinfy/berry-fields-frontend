@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import { Link } from "react-router-dom";
 import "../order-details/OrderDetails.css";
+import { discountEmployee } from "../../helpers/discountEmployee";
+import { discountCoupon } from "../../helpers/discountCoupon";
 
 export const OrderDetails = () => {
   const [inputValues, setInputValues] = useState({});
@@ -13,7 +15,11 @@ export const OrderDetails = () => {
     setCountProducts,
     makePayment,
     countProducts,
-    setDiscount
+    discount,
+    setDiscount,
+    discountDefault,
+    setDiscountDefault,
+    inventory
   } = useContext(CartContext);
 
   const handleInputChange = (event, productId) => {
@@ -77,6 +83,7 @@ export const OrderDetails = () => {
           ? parseInt(product.Precio)
           : -parseInt(product.Precio))
       );
+  
       setCountProducts(getTotalQuantity());
       setAllProducts(updatedProducts);
     }
@@ -89,6 +96,7 @@ export const OrderDetails = () => {
     setAllProducts(updatedProducts);
     if ((total - product.quantity * parseInt(product.price)) === 0) {
       setDiscount([]);
+      setDiscountDefault([]);
     }
   };
 
@@ -97,14 +105,28 @@ export const OrderDetails = () => {
   };
 
   const calculateTotal = () => {
-    return allProducts.reduce(
+
+
+    const update = allProducts.reduce(
       (acc, product) => acc + product.quantity * parseInt(product.price),
       0
     );
+
+    if (discountDefault.length > 0) {
+      setDiscountDefault([{
+        Porcentaje: discountEmployee(allProducts, inventory, update, discount)
+      }]);
+    }
+
+    
+
+    return update;
   };
   useEffect(() => {
     setCountProducts(getTotalQuantity());
     setTotal(calculateTotal());
+
+    
   }, [allProducts]);
 
   const emptyCart = () => {
@@ -112,6 +134,7 @@ export const OrderDetails = () => {
     setTotal(0);
     setCountProducts(0);
     setDiscount([]);
+    setDiscountDefault([]);
   };
 
   return (
