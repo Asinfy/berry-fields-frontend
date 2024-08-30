@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/ShoppingCartContext";
 import "../order-summary/OrderSummary.css";
@@ -16,12 +16,18 @@ export const OrderSummary = () => {
     setDiscount,
     document,
     setDocument,
+    discountDefault,
+    setDiscountDefault
+    
   } = useContext(CartContext);
 
   const { addMessage, confirmMessage } = useMessage();
-
   const [inputValue, setInputValue] = useState('');
+  
   const [error, setError] = useState('');
+  const documento = useRef();
+
+
 
   //para desactivar las variables que controlan el componente
   const deactivate = () => {
@@ -31,6 +37,9 @@ export const OrderSummary = () => {
     setDiscount([]);//para eliminar los datos del cupo 
     setInputValue('');//para limpiar el campo del cupon
     setDocument('');//para limpiar la variable documento
+
+    //Limpiar el input del documento
+    documento.current.value = '';
   }
 
   //funcion para traaer la fecha con la zona de colombia 
@@ -109,20 +118,49 @@ export const OrderSummary = () => {
 
   //validamos el documento del usuario 
   const validationDocument = async () => {
+    console.log(document);
     //validamos que el usuario ingrese un documento entre el rango de 6 a 10 dijitos
     if (document.length < 11 && document.length > 5) {
       try {
         const response = await axios.get(`https://zoho.accsolutions.tech/API/v1/Clientes_Report?where=Documento=="${document}"`);
         //validamos que el documento exista en la base de datos
+    
         if (response.data.data.length > 0) {
           const filteredData = response.data.data;
+
           //convertimos el array en un objeto
           const dataObject = filteredData.reduce((obj, item) => {
             obj['user'] = item;
             return obj;
           }, {});
-          setDataRecord(null);
-          setShipmentData(dataObject);
+
+          //Verificar que la persona que tienen un descuento por defecto no pueda aplicar el cupon de descuento
+          if (discount.length === 0 && dataObject.user.Descuento_berry === "Si") {
+           // console.log("No puede usar el cupón descuento ya que viene con uno establecido");
+
+  
+    
+            if (discountDefault.length !== 0 && discountDefault !== null) {
+              setDataRecord(null);
+              setShipmentData(dataObject);
+              
+            }else{
+              setDiscountDefault([{
+                Porcentaje: 10
+              }]);
+        
+            }
+
+            
+
+          }else{
+              setDataRecord(null);
+              setShipmentData(dataObject);
+              setDiscountDefault([]);
+          }
+            
+          
+
         } else {
           setShipmentData(null);
           setDataRecord(true);
@@ -170,6 +208,7 @@ export const OrderSummary = () => {
                 id="documento"
                 name="documento"
                 onChange={documentInputChange}
+                ref={documento}
                 placeholder="Ingrese su número de documento"
               ></input>
             </div>
@@ -184,8 +223,14 @@ export const OrderSummary = () => {
               </div>
             </div>
             <div className="row">
+
+
               <div className="mycart-item-text">Descuento:</div>
-              <div className="mycart-item-price">${discount.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format((discount[0].Porcentaje / 100) * total)}` : "0"}</div>
+              <div className="mycart-item-price">
+                ${discount.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format((discount[0].Porcentaje / 100) * total)}`
+                  : discountDefault.length > 0 ? `- ${new Intl.NumberFormat('es-CL').format((discountDefault[0].Porcentaje / 100) * total)}`
+                  : "0"}
+                </div>
             </div>
             <div className="row">
               <div className="mycart-item-text">Costo de Envío:</div>
@@ -195,8 +240,9 @@ export const OrderSummary = () => {
           <div className="footer-summation">
             <div className="grand-total">Total:</div>
             <div className="total-mycart">$
-              {discount.length > 0 ?
-                `${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` : `${new Intl.NumberFormat('es-CL').format(total)}`
+              {discount.length > 0 ? `${new Intl.NumberFormat('es-CL').format(total - (discount[0].Porcentaje / 100) * total)}` 
+                : discountDefault.length > 0 ? `${new Intl.NumberFormat('es-CL').format(total - (discountDefault[0].Porcentaje / 100) * total)}` 
+                : `${new Intl.NumberFormat('es-CL').format(total)}`
               }
             </div>
           </div>

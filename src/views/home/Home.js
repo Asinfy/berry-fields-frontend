@@ -35,6 +35,7 @@ export const Home = () => {
           }
           return [{ ...product, Categoria: product.Categoria, quantity: 0, valueTotalProduct: 0, IdProduct: product.ID }];
         });
+     
         const productProperties = modifiedProducts.reduce((acc, product) => {
           const found = acc.find(item => item.id === product.id);
           if (!found) {
