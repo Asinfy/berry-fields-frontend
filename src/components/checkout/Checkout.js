@@ -12,6 +12,7 @@ export const Checkout = () => {
     shipmentData,
     dataRecord,
     setDiscount,
+    setDiscountDefault,
     setDocument
   } = useContext(CartContext);
 
@@ -20,6 +21,7 @@ export const Checkout = () => {
     setShipmentData(null);
     setDataRecord(null);
     setDiscount([]);
+    setDiscountDefault([]);
     setDocument('');
 
   }

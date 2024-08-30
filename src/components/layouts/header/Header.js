@@ -15,6 +15,7 @@ export const Header = () => {
     setFilterProduct,
     setSearch,
     setDiscount,
+    setDiscountDefault,
     setMakePayment,
     setShipmentData,
     setDataRecord,
@@ -63,6 +64,7 @@ export const Header = () => {
     setShipmentData(null);
     setDataRecord(null);
     setDiscount([]);
+    setDiscountDefault([]);
     setDocument('');
   }
 

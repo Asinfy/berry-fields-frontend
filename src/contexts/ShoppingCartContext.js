@@ -13,6 +13,8 @@ export const ShoppingCartProvider = ({ children }) => {
     const [search, setSearch]= useState([]) //para almacenar los productos filtrados
     const [discount, setDiscount]= useState([]) //para almacenar el descuento
     const [discountDefault, setDiscountDefault] = useState([]); // para almacenar el descuento por defecto que tienen el empleado
+    const [inventory, setInventory] = useState([]); // Almacenar el inventario de berry 
+
     /* inicializacion del estado */
     const [allProducts, setAllProducts] = useState(() => {
         /* intenta recuperar los datos de localStorage, o retorna un array vacio si no hay datos */
@@ -67,7 +69,10 @@ export const ShoppingCartProvider = ({ children }) => {
             discount,
             setDiscount,
             discountDefault,
-            setDiscountDefault
+            setDiscountDefault,
+            inventory,
+            setInventory
+           
             }}>
             {children}
         </CartContext.Provider>
